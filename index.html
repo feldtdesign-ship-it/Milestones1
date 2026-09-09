@@ -7,327 +7,191 @@
 <style>
   :root{
     --ink:#0C0C0C;
-    --cement:#9B9B95;
-    --cream:#F3EFE4;
+    --paper:#F1EDE2;
+    --card:#FFFFFF;
+    --grey:#7C7C76;
+    --rule:#C9C4B6;
+    --exp:#F0611F;
+    --loc:#1E4FD6;
     --yellow:#F6C500;
-    --orange:#F0611F;
-    --royal:#1E4FD6;
-    --olive:#5F6B3C;
+    --green:#00933C;
   }
   *{box-sizing:border-box;}
-  html{background:var(--ink);}
+  html{background:var(--paper);}
   body{
     margin:0;
-    background:var(--ink);
-    color:var(--cream);
+    background:var(--paper);
+    color:var(--ink);
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size:17px;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
-  .wrap{max-width:820px;margin:0 auto;padding:0 28px 120px;}
-  p{max-width:64ch;}
-  ul{max-width:64ch;padding-left:20px;}
-  li{margin-bottom:8px;}
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px 120px;}
+  p{max-width:62ch;}
 
-  /* COVER */
-  .cover{
-    min-height:88vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:80px 0 60px;
-  }
+  /* ---------- COVER ---------- */
+  .cover{padding:72px 0 40px;}
   .kicker{
-    font-size:12px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--yellow);
-    margin-bottom:28px;
+    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    font-weight:700;color:var(--ink);margin-bottom:26px;
   }
   h1{
-    font-size:58px;
-    line-height:0.98;
-    letter-spacing:-0.02em;
-    margin:0 0 24px;
-    text-transform:uppercase;
-    font-weight:800;
+    font-size:64px;line-height:0.94;letter-spacing:-0.035em;
+    margin:0 0 22px;text-transform:uppercase;font-weight:700;
   }
-  .sub{
-    font-size:21px;
-    line-height:1.35;
-    color:var(--cement);
-    max-width:34ch;
-    margin:0 0 40px;
-  }
+  .sub{font-size:21px;line-height:1.3;max-width:32ch;margin:0 0 34px;}
   .stamp{
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--cement);
-    border-top:1px solid #2a2a2a;
-    padding-top:14px;
+    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--grey);border-top:2px solid var(--ink);padding-top:12px;font-weight:700;
   }
 
-  /* SECTION HEADS */
+  /* ---------- BULLETS ---------- */
+  .bul{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:50%;
+    color:#fff;font-weight:700;font-size:14px;
+    vertical-align:-6px;
+  }
+  .bul.e{background:var(--exp);}
+  .bul.l{background:var(--loc);}
+
+  /* ---------- SECTION ---------- */
   h2{
-    font-size:13px;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:var(--yellow);
-    margin:0 0 18px;
-    font-weight:700;
+    font-size:11px;letter-spacing:0.22em;text-transform:uppercase;
+    font-weight:700;margin:0 0 16px;
   }
-  .rule{border:0;border-top:1px solid #232323;margin:64px 0 40px;}
+  .rule{border:0;border-top:2px solid var(--ink);margin:64px 0 36px;}
   .lede{
-    font-size:30px;
-    line-height:1.1;
-    margin:0 0 18px;
-    text-transform:uppercase;
-    letter-spacing:-0.01em;
-    max-width:26ch;
+    font-size:32px;line-height:1.04;letter-spacing:-0.025em;
+    margin:0 0 16px;text-transform:uppercase;font-weight:700;max-width:22ch;
   }
 
-  /* GLOSSARY */
-  .terms{margin-top:32px;}
-  .term{
-    display:grid;
-    grid-template-columns:170px 1fr;
-    gap:0 24px;
-    padding:18px 0;
-    border-top:1px solid #232323;
-    max-width:74ch;
+  /* ---------- ANNOUNCEMENT ---------- */
+  .ann{
+    background:var(--ink);color:var(--paper);
+    padding:14px 18px;margin:0 0 22px;max-width:62ch;
+    font-size:14px;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:700;line-height:1.45;
   }
-  .term dt{
-    font-size:15px;
-    font-weight:800;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    color:var(--yellow);
-    line-height:1.25;
-  }
-  .term dd{margin:0;}
-  .term dd p{margin:0 0 8px;font-size:16px;}
-  .term dd p:last-child{margin:0;}
-  .term .you{color:var(--cement);font-size:15px;}
+  .ann.hold{background:var(--yellow);color:var(--ink);}
 
-  /* ARTIST CARDS */
-  .artist{
-    border-top:6px solid var(--royal);
-    padding:24px 0 8px;
-    margin-bottom:44px;
+  /* ---------- KEY ---------- */
+  .key{
+    background:var(--card);border:2px solid var(--ink);
+    padding:20px 22px;margin:28px 0 0;max-width:62ch;
   }
-  .artist .who{
-    font-size:12px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--cement);
-    margin-bottom:8px;
-  }
-  .artist h3{
-    font-size:31px;
-    line-height:1.05;
-    letter-spacing:-0.015em;
-    margin:0 0 6px;
-    text-transform:uppercase;
-    font-weight:800;
-  }
-  .artist .claim{
-    font-size:19px;
-    line-height:1.35;
-    color:var(--yellow);
-    max-width:44ch;
-    margin:0 0 18px;
-  }
-  .steal{
-    background:#161616;
-    padding:18px 20px;
-    margin-top:18px;
-    max-width:64ch;
-    border-left:4px solid var(--orange);
-  }
-  .steal .lbl{
-    font-size:11px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--orange);
-    font-weight:800;
-    display:block;
-    margin-bottom:8px;
-  }
-  .steal p{margin:0;font-size:16px;}
+  .key .row{display:flex;align-items:flex-start;gap:14px;padding:10px 0;}
+  .key .row + .row{border-top:1px solid var(--rule);}
+  .key .row .g{flex:0 0 46px;padding-top:2px;}
+  .key .row p{margin:0;font-size:15px;}
+  .key .row b{text-transform:uppercase;letter-spacing:0.06em;font-size:13px;display:block;}
 
-  /* STATION */
+  /* ---------- STATION ---------- */
   .station{
-    display:grid;
-    grid-template-columns:104px 1fr;
-    gap:0;
-    position:relative;
-    padding-bottom:6px;
+    display:grid;grid-template-columns:96px 1fr;position:relative;
   }
-  .track{
-    position:relative;
-    padding-top:8px;
+  .track{position:relative;}
+  .track:before,.track:after{
+    content:"";position:absolute;top:0;bottom:0;width:11px;
   }
-  .track:before{
-    content:"";
-    position:absolute;
-    left:17px;
-    top:0;
-    bottom:-6px;
-    width:6px;
-    background:var(--royal);
+  .track:before{left:18px;background:var(--exp);}
+  .track:after{left:42px;background:var(--loc);}
+  .station.first .track:before,.station.first .track:after{top:26px;}
+  .station.last .track:before,.station.last .track:after{bottom:auto;height:26px;}
+  .dots{position:relative;z-index:2;padding-top:12px;height:0;}
+  .d{
+    position:absolute;border-radius:50%;background:var(--ink);
+    border:3px solid var(--paper);
   }
-  .station.terminal .track:before{top:34px;}
-  .station.origin .track:before{bottom:auto;height:34px;}
-  .dot{
-    position:relative;
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    background:var(--cream);
-    border:6px solid var(--ink);
-    z-index:2;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:var(--ink);
-    font-weight:800;
-    font-size:15px;
+  .d.big{width:22px;height:22px;}
+  .d.sm{width:15px;height:15px;}
+  .d.e{left:12px;top:0;}
+  .d.l{left:36px;top:0;}
+  .d.l.sm{left:40px;top:3px;}
+
+  .body{padding:0 0 46px;}
+  .stophead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:2px;}
+  .num{
+    font-size:13px;font-weight:700;letter-spacing:0.14em;
   }
-  .dot.anchor{background:var(--yellow);width:56px;height:56px;margin-left:-8px;font-size:18px;}
-  .dot.here{background:var(--orange);color:var(--cream);}
-  .body{padding:4px 0 52px;}
-  .when{
-    font-size:12px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--cement);
-    margin-bottom:6px;
+  .when{font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);font-weight:700;}
+  .svc{
+    font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+    padding:3px 8px;color:#fff;
   }
+  .svc.e{background:var(--exp);}
+  .svc.l{background:var(--loc);}
   .body h3{
-    font-size:31px;
-    line-height:1.05;
-    letter-spacing:-0.015em;
-    margin:0 0 14px;
-    text-transform:uppercase;
-    font-weight:800;
+    font-size:38px;line-height:0.98;letter-spacing:-0.03em;
+    margin:6px 0 16px;text-transform:uppercase;font-weight:700;
   }
-  .anchor-tag{
-    display:inline-block;
-    background:var(--yellow);
-    color:var(--ink);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    padding:4px 10px;
-    margin-bottom:12px;
+  .body h4{
+    font-size:12px;letter-spacing:0.16em;text-transform:uppercase;
+    font-weight:700;margin:22px 0 6px;
   }
-  .here-tag{
-    display:inline-block;
-    background:var(--orange);
-    color:var(--cream);
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    padding:4px 10px;
-    margin-bottom:12px;
-  }
-  .gate{
-    border-left:4px solid var(--olive);
-    padding:2px 0 2px 16px;
-    margin-top:20px;
-    max-width:64ch;
-  }
-  .gate .lbl{
-    font-size:11px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--olive);
-    font-weight:700;
-    display:block;
-    margin-bottom:6px;
-  }
-  .do{
-    border:1px solid var(--royal);
-    padding:16px 20px 8px;
-    margin-top:18px;
-    max-width:64ch;
-  }
-  .do .lbl{
-    font-size:11px;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--royal);
-    font-weight:800;
-    display:block;
-    margin-bottom:10px;
-  }
-  .do ol{margin:0;padding-left:20px;}
-  .do li{font-size:16px;margin-bottom:8px;}
-  .do li b{color:var(--cream);}
-  .lesson{
-    font-size:15px;
-    color:var(--cement);
-    margin-top:18px;
-    max-width:64ch;
-    border-top:1px solid #232323;
-    padding-top:12px;
-  }
-  .lesson b{color:var(--yellow);font-weight:700;}
+  .body h4 + p{margin-top:0;}
+  .body ul{max-width:62ch;padding-left:20px;margin:6px 0 0;}
+  .body li{margin-bottom:7px;}
+  .body li b{font-weight:700;}
 
-  /* WARNING SIGNS */
-  .sign{
-    background:var(--yellow);
-    color:var(--ink);
-    padding:20px 22px;
-    margin:0 0 14px;
-    max-width:64ch;
+  /* ---------- QUOTE ---------- */
+  .q{
+    border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
+    padding:18px 0;margin:24px 0 0;max-width:62ch;
   }
-  .sign .hdr{
-    font-size:17px;
-    font-weight:800;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    margin-bottom:8px;
-  }
-  .sign .means{font-size:16px;margin:0 0 12px;max-width:none;}
-  .slot{
-    border:2px dashed rgba(12,12,12,0.45);
-    padding:12px 14px;
-    font-size:14px;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
+  .q p{
+    font-size:24px;line-height:1.2;letter-spacing:-0.02em;margin:0 0 8px;
     font-weight:700;
-    color:rgba(12,12,12,0.6);
   }
+  .q .who{font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--grey);font-weight:700;}
 
-  .closer{
-    margin-top:20px;
-    border-top:6px solid var(--orange);
-    padding-top:28px;
+  /* ---------- RIDE ---------- */
+  .ride{
+    display:grid;grid-template-columns:96px 1fr;
   }
-  .closer p{font-size:20px;line-height:1.4;color:var(--cream);}
+  .ride .track:before{left:18px;background:var(--exp);}
+  .ride .track:after{left:42px;background:var(--loc);}
+  .ride .rbody{
+    padding:0 0 46px;
+  }
+  .ridecard{
+    background:var(--card);border-left:11px solid var(--yellow);
+    padding:16px 20px;max-width:62ch;
+  }
+  .ridecard .lbl{
+    font-size:11px;letter-spacing:0.16em;text-transform:uppercase;
+    font-weight:700;color:var(--grey);display:block;margin-bottom:6px;
+  }
+  .ridecard h5{
+    font-size:19px;margin:0 0 8px;text-transform:uppercase;
+    letter-spacing:-0.01em;font-weight:700;
+  }
+  .ridecard p{margin:0;font-size:16px;}
+
+  /* ---------- CLOSER ---------- */
+  .closer{border-top:11px solid var(--exp);padding-top:26px;margin-top:14px;}
   .closer .big{
-    font-size:34px;
-    line-height:1.05;
-    text-transform:uppercase;
-    font-weight:800;
-    letter-spacing:-0.015em;
-    max-width:22ch;
+    font-size:40px;line-height:1;text-transform:uppercase;font-weight:700;
+    letter-spacing:-0.03em;max-width:20ch;margin:0 0 20px;
   }
+  .closer p{font-size:18px;}
+
   @media (max-width:640px){
-    h1{font-size:38px;}
-    .lede{font-size:24px;}
-    .body h3,.artist h3{font-size:24px;}
-    .artist .claim{font-size:17px;}
-    .station{grid-template-columns:64px 1fr;}
-    .track:before{left:12px;}
-    .dot{width:30px;height:30px;font-size:12px;border-width:5px;}
-    .dot.anchor{width:42px;height:42px;font-size:14px;margin-left:-6px;}
-    .term{grid-template-columns:1fr;gap:6px;}
+    h1{font-size:40px;}
+    .lede{font-size:25px;}
+    .body h3{font-size:27px;}
+    .closer .big{font-size:28px;}
+    .q p{font-size:20px;}
+    .station,.ride{grid-template-columns:64px 1fr;}
+    .track:before{left:10px;width:9px;}
+    .track:after{left:30px;width:9px;}
+    .ride .track:before{left:10px;}
+    .ride .track:after{left:30px;}
+    .d.big{width:18px;height:18px;}
+    .d.e{left:5px;}
+    .d.l{left:25px;}
+    .d.l.sm{left:27px;top:2px;}
   }
 </style>
 </head>
@@ -336,321 +200,369 @@
 
   <!-- COVER -->
   <section class="cover">
-    <div class="kicker">Platform's Edge / Working document</div>
+    <div class="kicker">Platform's Edge &nbsp;/&nbsp; Working document</div>
     <h1>The Line<br>Runs Both<br>Ways</h1>
     <p class="sub">A map of PJ O'Rourke II's career, read from the last stop backwards to the platform he is standing on.</p>
-    <div class="stamp">Draft v2 &nbsp;&middot;&nbsp; For PJ &nbsp;&middot;&nbsp; Feldt Design</div>
+    <div class="stamp">Draft v3 &nbsp;&middot;&nbsp; For PJ &nbsp;&middot;&nbsp; Feldt Design</div>
   </section>
 
   <!-- HOW TO READ -->
-  <section class="read">
+  <section>
+    <div class="ann">This is a Reissue-bound train. The next stop is the Archive. Stand clear.</div>
     <h2>How to read this</h2>
-    <p class="lede">Start at the end. Everything before it is a requirement, not a hope.</p>
-    <p>Most career plans run forward and turn into a wish list. This one runs backwards. The last station is fixed, and every station above it exists only because the one below it makes it possible.</p>
-    <p>Read it as a subway line. You are not at the start of the line. You are eight stops in.</p>
-    <p>The dates are approximate on purpose. They say <em>circa</em> because the order matters and the calendar does not. Skipping a station is the only way to miss the train.</p>
-    <p>Two halves to this document. The first half is how the art world actually assigns value, and three artists who already ran this line. The second half is the line itself, with the specific thing to do at every stop. Green bars are gates: what has to be true before the next station is reachable. Blue boxes are the actual work.</p>
+    <p class="lede">Start at the end. Work back to where you're standing.</p>
+    <p>Most plans run forward and turn into a wish list. This one runs backwards. The last stop is fixed, and every stop above it is there because the one below it makes it possible.</p>
+    <p>Read it as a subway line, because it is one. Fourteen years in, PJ is not at the start of the line. He is most of the way down it.</p>
+
+    <div class="key">
+      <div class="row">
+        <div class="g"><span class="bul e">E</span></div>
+        <p><b>The Express</b>Five stops. The ones that change what PJ legally owns and what anyone can prove. Big dot on the map.</p>
+      </div>
+      <div class="row">
+        <div class="g"><span class="bul l">L</span></div>
+        <p><b>The Local</b>All eight. Same track, same terminal, three extra stops where the money and the record get built. Small dot on the map.</p>
+      </div>
+      <div class="row">
+        <div class="g" style="padding-top:6px;"><span style="display:inline-block;width:20px;height:20px;border-radius:50%;background:var(--ink);"></span></div>
+        <p><b>Both trains arrive</b>The Express gets to the Foundation sooner. The Local gets there with the catalog counted, the numbers clean, and the show already booked. Neither one is wrong. Know which one you're on.</p>
+      </div>
+    </div>
+
+    <h4 style="font-size:12px;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;margin:30px 0 6px;">On every platform</h4>
+    <p style="margin-top:0;">A quote from someone who already rode this line. Between the stops, what to do while the train is moving. Dates say <em>circa</em> on purpose — the order matters, the calendar doesn't.</p>
   </section>
 
   <hr class="rule">
 
-  <!-- PART ONE: THE EDUCATION -->
+  <!-- ================= STOP 1 ================= -->
   <section>
-    <h2>Part one &middot; Five words that decide what the work is worth</h2>
-    <p class="lede">None of these are about talent.</p>
-    <p>Two artists can make the same object. One piece sells for a hundred dollars forever and the other enters a museum collection. The difference is almost never the drawing. It is these five words, and every one of them is paperwork.</p>
+    <h2>The line, read backwards</h2>
 
-    <dl class="terms">
-      <div class="term">
-        <dt>Edition</dt>
-        <dd>
-          <p>A stated, finite number of a thing, declared before it sells out and never added to afterward. Forty prints means forty. The forty-first destroys the value of the previous forty.</p>
-          <p class="you">Right now a run of shirts is stock. Stated and closed, the same run is an edition.</p>
-        </dd>
-      </div>
-      <div class="term">
-        <dt>Provenance</dt>
-        <dd>
-          <p>The chain of custody. Who made it, when, and every hand it passed through since. Auction houses and museums will not touch work without it, no matter how good the work is.</p>
-          <p class="you">A receipt, a dated photo, and a name in a notebook is provenance. Memory is not.</p>
-        </dd>
-      </div>
-      <div class="term">
-        <dt>Authentication</dt>
-        <dd>
-          <p>Somebody with standing says this is real. For a living artist that somebody is the artist. After that, it has to be an institution, or the answer becomes nobody and the work becomes unsellable.</p>
-          <p class="you">This is the single reason a foundation exists. It outlives the artist's ability to say yes.</p>
-        </dd>
-      </div>
-      <div class="term">
-        <dt>Catalogue raisonn&eacute;</dt>
-        <dd>
-          <p>The complete, numbered record of everything an artist made. It is the master list. Anything not in it is suspect, and anything in it is defensible.</p>
-          <p class="you">Station 4 is this. It is a spreadsheet before it is a book.</p>
-        </dd>
-      </div>
-      <div class="term">
-        <dt>Foundation</dt>
-        <dd>
-          <p>A legal body that owns and defends the work, grants rights, and keeps earning after the artist stops working. It is the difference between an estate and an institution.</p>
-          <p class="you">Station 3. Built while alive, by every artist worth copying.</p>
-        </dd>
-      </div>
-    </dl>
-  </section>
-
-  <hr class="rule">
-
-  <section>
-    <h2>Part one &middot; Three artists who already ran this line</h2>
-    <p>Not heroes. Case studies. Each one solved a specific problem that is sitting in the studio right now, and each one is here for exactly one reason.</p>
-
-    <!-- LEWITT -->
-    <div class="artist" style="margin-top:36px;">
-      <div class="who">1928&ndash;2007 &middot; American &middot; Conceptual art</div>
-      <h3>Sol LeWitt</h3>
-      <p class="claim">He proved that the instruction can be the artwork, and the instruction is what you own.</p>
-      <p>LeWitt made wall drawings &mdash; over a thousand of them &mdash; and almost never drew one himself. What he sold was a certificate and a diagram: a set of written instructions telling a drafter what to make. Hired assistants executed it on a museum wall. When the show closed, the wall was painted over and the drawing was gone. The certificate remained, and the certificate was the property.</p>
-      <p>He wrote it out plainly in 1967, in an essay called <em>Paragraphs on Conceptual Art</em>: the idea becomes the machine that makes the art. Collectors and museums took him at his word. In 2008 MASS MoCA opened a building holding over a hundred of his wall drawings, executed by teams from his instructions, scheduled to stay up for decades. He had been dead a year. The work kept getting made because the instructions were owned, dated, and numbered.</p>
-      <div class="steal">
-        <span class="lbl">Why he is on this list</span>
-        <p>A stencil is an instruction. It is a physical, reusable, dateable object that produces an image and can produce it again. That is not a metaphor for LeWitt's practice, it is the same structure. Of everything on this page, this is the closest match to what is already in PJ's studio &mdash; which means the plates are not leftovers from making the work. The plates <em>are</em> the work, and they are the thing to photograph, number, and never let out of the building.</p>
-      </div>
-    </div>
-
-    <!-- JUDD -->
-    <div class="artist">
-      <div class="who">1928&ndash;1994 &middot; American &middot; Minimalism</div>
-      <h3>Donald Judd</h3>
-      <p class="claim">He built the institution around a place he controlled, while he was alive to control it.</p>
-      <p>Judd left New York in the early 1970s for Marfa, Texas &mdash; a small town in the high desert with a decommissioned army fort. He bought buildings. He installed his own work permanently, at the scale and in the light he wanted, and refused to let it be shuffled around by galleries. In 1986 he founded the Chinati Foundation on that land to keep it that way.</p>
-      <p>Chinati is why Marfa is Marfa. A remote town became a destination people fly to, because one artist decided the setting was part of the work and then owned the setting. Judd died in 1994. The Judd Foundation, handling his estate and buildings, came two years later &mdash; after him. Chinati came while he was still working, and Chinati is the one that shaped everything since.</p>
-      <div class="steal">
-        <span class="lbl">Why he is on this list</span>
-        <p>Platform's Edge is a place. The cart, the platform, the pitch, the transaction with somebody waiting for a train &mdash; that is the setting, and the setting is part of the work. Judd's move was to stop treating the location as a venue somebody else owns and start treating it as an asset. The question this raises is not where to sell. It is what PJ controls, and what he is renting.</p>
-      </div>
-    </div>
-
-    <!-- HARING -->
-    <div class="artist">
-      <div class="who">1958&ndash;1990 &middot; American &middot; Street and pop art</div>
-      <h3>Keith Haring</h3>
-      <p class="claim">He set up the structure early, and the structure is the only reason the work survived him.</p>
-      <p>Starting around 1980, Haring drew in white chalk on the black paper panels covering expired advertisements in the New York subway. He worked fast, in public, and by his own account sometimes made dozens in a single day. He was arrested for it more than once. The drawings were never meant to last &mdash; they were papered over or torn down within days, and the originals are almost entirely gone.</p>
-      <p>They exist now because people photographed them while they were up. That is the whole story: the drawings are lost and the archive survived.</p>
-      <p>He opened the Pop Shop in SoHo in 1986, selling his own work cheap and directly, and took real criticism for it. He established the Keith Haring Foundation in 1989, while alive and working, and died in February 1990. The Pop Shop closed in 2005. The work has been licensed, exhibited and reprinted continuously ever since, because the foundation was there to authorize it. Nine years from the first subway drawing to the foundation.</p>
-      <div class="steal">
-        <span class="lbl">Why he is on this list</span>
-        <p>Two things, and neither is the clock. First: the archive outlives the object, always. Second: he was dismissed as a graffiti kid, then canonized, then written off as too commercial, and is now in the museums that would not have let him in the door in 1982. The market went around that wheel four times on one body of work. Being early or late is not the variable. Still owning the work when the wheel comes back around is.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <!-- PART TWO: THE LINE -->
-  <section>
-    <h2>Part two &middot; The line, read backwards</h2>
-    <p style="margin-bottom:36px;">Eight stations. Every one has a gate &mdash; what has to be true &mdash; and the actual work that gets you through it.</p>
-
-    <!-- 1 -->
-    <div class="station terminal">
-      <div class="track"><div class="dot">1</div></div>
+    <div class="station first">
+      <div class="track"><div class="dots"><div class="d big e"></div><div class="d big l"></div></div></div>
       <div class="body">
-        <div class="when">Circa 2075</div>
+        <div class="stophead">
+          <span class="num">STOP 1</span>
+          <span class="when">Circa 2075</span>
+          <span class="svc e">Express &middot; Terminal</span>
+        </div>
         <h3>The Reissue</h3>
-        <p>A stencil cut in 2016 comes back. A licensed collaboration, a museum shop reprint, a capsule with a brand that did not exist when the original was pulled. A generation that was not born yet buys it new.</p>
-        <p>This is not the goal. It is the proof that the goal worked. Reissues happen to artists whose work is owned, dated, and defended by somebody. They do not happen to piles.</p>
-        <div class="gate"><span class="lbl">Gate</span>Every design authenticated, dated, and traceable to a physical plate, with one entity holding the copyright and the marks.</div>
-        <div class="lesson">The five words at work: <b>authentication</b> is what lets a brand license it, and <b>edition</b> is what makes the reissue an event instead of a restock.</div>
+
+        <h4>What this is</h4>
+        <p>A stencil cut in 2016 comes back. A licensed collaboration. A museum shop reprint. A capsule with a brand that didn't exist when the original sold out. People who weren't born yet buy it new and think it's new.</p>
+
+        <h4>What to look at</h4>
+        <p>This isn't the goal. It's the receipt that says the goal worked. Reissues happen to artists whose work is owned, dated and defended by somebody. They don't happen to piles.</p>
+
+        <h4>What has to be true</h4>
+        <p>Every design authenticated, dated and traceable to a physical plate, with one entity holding the copyright and the marks. All of that gets built further down the line.</p>
+
+        <div class="q">
+          <p>Art is for everybody.</p>
+          <div class="who">Keith Haring</div>
+        </div>
       </div>
     </div>
 
-    <!-- 2 -->
+    <!-- RIDE 2 -> 1 -->
+    <div class="ride">
+      <div class="track"></div>
+      <div class="rbody">
+        <div class="ridecard">
+          <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 2 to Stop 1</span>
+          <h5>Let it come back around</h5>
+          <p>This is the longest ride on the line and there is almost nothing to do on it. The work is made. The record is kept. The market goes away and comes back on its own schedule, and it always comes back. The only job here is to still own the thing when it does.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STOP 2 ================= -->
     <div class="station">
-      <div class="track"><div class="dot">2</div></div>
+      <div class="track"><div class="dots"><div class="d sm l"></div></div></div>
       <div class="body">
-        <div class="when">Circa 2050</div>
+        <div class="stophead">
+          <span class="num">STOP 2</span>
+          <span class="when">Circa 2050</span>
+          <span class="svc l">Local only</span>
+        </div>
         <h3>The Retrospective</h3>
-        <p>A museum builds a show out of the subway work. A publisher builds a book out of the catalog. Both call one phone number to do it, and that number is an organization, not a family member guessing.</p>
-        <div class="gate"><span class="lbl">Gate</span>A staffed body that can say yes, say no, grant rights, and prove what is real. That body is the foundation, two stations down.</div>
-        <div class="do">
-          <span class="lbl">The work</span>
-          <ol>
-            <li><b>Loan-ready records.</b> A curator asks what a piece is, when it was made, and who owns it. Every answer already written down.</li>
-            <li><b>High-resolution files</b> of every plate and print, in one place, backed up twice.</li>
-            <li><b>One point of contact</b> published, with the authority to actually grant a loan.</li>
-          </ol>
+
+        <h4>What this is</h4>
+        <p>A museum builds a show out of the subway work. A publisher builds a book out of the catalog. Both call one phone number to do it, and that number is an organization.</p>
+
+        <h4>What to look at</h4>
+        <p>The Express skips this stop, and it should — you can't schedule a museum show. It happens because the records are good enough that saying yes is easy. Curators go where the work is already documented. Every time.</p>
+
+        <h4>What to have ready</h4>
+        <ul>
+          <li><b>Loan-ready records.</b> A curator asks what a piece is, when it was made and who owns it. Every answer already written down.</li>
+          <li><b>High-resolution files</b> of every plate and print, one place, backed up twice.</li>
+          <li><b>One contact</b> with the authority to actually grant a loan.</li>
+        </ul>
+
+        <div class="q">
+          <p>The photographs are why the drawings still exist.</p>
+          <div class="who">Martha Cooper &middot; on shooting the trains in the seventies</div>
         </div>
-        <div class="lesson">This station is bought entirely at station 7. A museum cannot show what cannot be <b>provenanced</b>.</div>
       </div>
     </div>
 
-    <!-- 3 ANCHOR -->
+    <!-- RIDE 3 -> 2 -->
+    <div class="ride">
+      <div class="track"></div>
+      <div class="rbody">
+        <div class="ridecard">
+          <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 3 to Stop 2</span>
+          <h5>Answer the phone</h5>
+          <p>Once the foundation exists, people start asking. A student writing a thesis. A blog. A small gallery upstate. Say yes to the small ones and keep a file of every ask. That file is what a museum reads before it calls.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STOP 3 ================= -->
     <div class="station">
-      <div class="track"><div class="dot anchor">3</div></div>
+      <div class="track"><div class="dots"><div class="d big e"></div><div class="d big l"></div></div></div>
       <div class="body">
-        <span class="anchor-tag">The anchor</span>
-        <div class="when">Circa 2032</div>
+        <div class="stophead">
+          <span class="num">STOP 3</span>
+          <span class="when">Circa 2032</span>
+          <span class="svc e">Express &middot; Major</span>
+        </div>
         <h3>The Foundation</h3>
-        <p>An organization that owns the work, licenses it, and spends the income on something PJ chooses. Kids, materials, studio time, whatever the mission ends up saying.</p>
-        <p>Every artist in part one built their institution while alive and working. Haring set up his foundation in 1989, nine years after the first subway drawing. Judd founded Chinati in 1986, eight years before he died, and it defined everything that came after. Not one of these was a death document. They were built by working artists who wanted to decide the terms themselves rather than leave it to somebody else.</p>
-        <p>PJ started selling on subway platforms in 2012. Fourteen years in. By the standard those three set, this is not a distant station. It is the next serious one.</p>
-        <div class="gate"><span class="lbl">Gate</span>An income stream large enough and steady enough to fund a mission, plus the IP already assigned to an entity PJ controls. Both get built at stations 5 and 6.</div>
-        <div class="do">
-          <span class="lbl">The work</span>
-          <ol>
-            <li><b>The mission in one sentence.</b> Who it serves and what it gives them. If it takes a paragraph it is not decided yet.</li>
-            <li><b>Three people</b> willing to sit on a board. One who knows money, one who knows art, one who knows PJ well enough to argue.</li>
-            <li><b>A funding rule</b> written down: what share of licensing income goes to the mission, automatically, before anyone debates it.</li>
-          </ol>
+
+        <h4>What this is</h4>
+        <p>An organization that owns the work, licenses it, and spends the income on something PJ picks. Kids, materials, studio time, a cart for somebody else. Whatever the mission ends up saying.</p>
+
+        <h4>What to look at</h4>
+        <p>Every artist worth copying built this while they were working, not at the end. Haring set his up in 1989 with a shop running and a full studio. Judd founded Chinati in 1986 and spent the next eight years using it. These were not exit plans. They were working artists deciding they'd rather set the terms themselves than let somebody else do it later.</p>
+        <p>PJ has been on the platform since 2012. Fourteen years of work is not a warm-up for this. It's the qualification.</p>
+
+        <h4>What to have ready</h4>
+        <ul>
+          <li><b>The mission in one sentence.</b> Who it serves and what they get. If it takes a paragraph it isn't decided yet.</li>
+          <li><b>Three people</b> for a board. One who knows money, one who knows art, one who knows PJ well enough to argue with him.</li>
+          <li><b>A funding rule in writing.</b> What share of licensing income goes to the mission, automatically, before anybody debates it.</li>
+        </ul>
+
+        <div class="q">
+          <p>It takes a great deal of time and thought to install work properly.</p>
+          <div class="who">Donald Judd &middot; who bought the buildings instead of renting the walls</div>
         </div>
-        <div class="lesson">A foundation is the machine that performs <b>authentication</b> after the artist can no longer do it personally. That is its real job.</div>
       </div>
     </div>
 
-    <!-- 4 -->
+    <!-- RIDE 4 -> 3 -->
+    <div class="ride">
+      <div class="track"></div>
+      <div class="rbody">
+        <div class="ridecard">
+          <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 4 to Stop 3</span>
+          <h5>Decide who it's for</h5>
+          <p>This ride is a thinking ride, not a paperwork ride. Name the mission out loud to five different people and watch which version makes them lean in. That's the sentence. Write it down the same day you hear it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STOP 4 ================= -->
     <div class="station">
-      <div class="track"><div class="dot">4</div></div>
+      <div class="track"><div class="dots"><div class="d sm l"></div></div></div>
       <div class="body">
-        <div class="when">Circa 2030</div>
+        <div class="stophead">
+          <span class="num">STOP 4</span>
+          <span class="when">Circa 2030</span>
+          <span class="svc l">Local only</span>
+        </div>
         <h3>The Catalog</h3>
-        <p>Editions closed and stated. This design was fifty, it is gone, here is the proof. Nothing gets reprinted quietly, because there is a difference between a reissue and just printing more, and only the record knows which one happened.</p>
-        <p>Three stores of merch becomes a counted, photographed, categorized inventory. Right now it is stock. After this station it is a catalog.</p>
-        <div class="gate"><span class="lbl">Gate</span>Item-level records. Every piece knows what it is, when it was made, and how many exist.</div>
-        <div class="do">
-          <span class="lbl">The work</span>
-          <ol>
-            <li><b>One row per design.</b> Name, year, plate it came from, size of run, how many are left.</li>
-            <li><b>Declare each run closed</b> in writing, with a date. That declaration is what creates the edition.</li>
-            <li><b>Number what can still be numbered</b> and stop pretending the uncounted stock is countable later. It will not be.</li>
-          </ol>
+
+        <h4>What this is</h4>
+        <p>Editions closed and stated. This design was fifty, it's gone, here's the proof. Three stores of merch becomes a counted, photographed, categorized inventory. Right now it's stock. After this stop it's a catalog.</p>
+
+        <h4>What to look at</h4>
+        <p>A closed edition is what makes a reissue an event instead of a restock. Same object, completely different value, and the only thing separating them is a number somebody wrote down and stuck to.</p>
+
+        <h4>What to have ready</h4>
+        <ul>
+          <li><b>One row per design.</b> Name, year, plate it came from, size of run, how many left.</li>
+          <li><b>Declare each run closed</b> in writing, with a date. That declaration is what creates the edition.</li>
+          <li><b>Number what can still be numbered.</b> Start with what's on the shelf today.</li>
+        </ul>
+
+        <div class="q">
+          <p>The idea becomes a machine that makes the art.</p>
+          <div class="who">Sol LeWitt &middot; 1967 &middot; he sold the instruction, never the wall</div>
         </div>
-        <div class="lesson">This is a <b>catalogue raisonn&eacute;</b> in its working form. LeWitt's certificates did exactly this job: they made an unlimited-seeming practice into a finite, ownable list.</div>
       </div>
     </div>
 
-    <!-- 5 -->
+    <!-- RIDE 5 -> 4 -->
+    <div class="ride">
+      <div class="track"></div>
+      <div class="rbody">
+        <div class="ridecard">
+          <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 5 to Stop 4</span>
+          <h5>Count while you sell</h5>
+          <p>Don't stop selling to build the catalog. Build it out of the selling. Every time something goes out the door it gets a line: what it was, what run it came from, what's left. Ten seconds a sale, and by the time you pull into Stop 4 the work is already done.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STOP 5 ================= -->
     <div class="station">
-      <div class="track"><div class="dot">5</div></div>
+      <div class="track"><div class="dots"><div class="d sm l"></div></div></div>
       <div class="body">
-        <div class="when">Circa 2028</div>
+        <div class="stophead">
+          <span class="num">STOP 5</span>
+          <span class="when">Circa 2028</span>
+          <span class="svc l">Local only</span>
+        </div>
         <h3>The Company</h3>
-        <p>Platform's Edge running at scale. The cart, the cabinet, the booking calendar, ALL CITY shipped, Gumbit produced. Multiple channels, real margins, income that does not depend on PJ personally standing behind a table every single day.</p>
-        <p>This is the station that funds station 3. A foundation with nothing coming in is a piece of paper.</p>
-        <div class="gate"><span class="lbl">Gate</span>A full quarter of clean, logged numbers before any new channel opens. Not gross sales. Costs, margins, and what actually sold.</div>
-        <div class="do">
-          <span class="lbl">The work</span>
-          <ol>
-            <li><b>Unit cost on every item.</b> Blank, ink, labor, shipping. The real number, not the guess.</li>
-            <li><b>Margin per channel.</b> Platform, store, online, event. One of them is losing money and it is not obvious which.</li>
-            <li><b>One quarter, logged daily.</b> Ninety days of honest numbers beats three years of memory.</li>
-          </ol>
+
+        <h4>What this is</h4>
+        <p>Platform's Edge running at scale. The cart, the cabinet, the booking calendar, ALL CITY shipped, Gumbit produced. Multiple channels, real margins, money coming in that doesn't require PJ to personally stand behind a table every single day.</p>
+
+        <h4>What to look at</h4>
+        <p>This is the stop that pays for Stop 3. A foundation with nothing coming in is a piece of paper in a drawer. Haring took real heat for opening a shop and selling his own work cheap, and he was right — the shop funded everything else and put the work in more hands than any gallery ever did.</p>
+
+        <h4>What to have ready</h4>
+        <ul>
+          <li><b>Unit cost on every item.</b> Blank, ink, labor, shipping. The real number.</li>
+          <li><b>Margin per channel.</b> Platform, store, online, event. One of them is quietly losing money and it isn't the obvious one.</li>
+          <li><b>Ninety days logged daily.</b> One honest quarter beats three years of memory.</li>
+        </ul>
+
+        <div class="q">
+          <p>Being good in business is the most fascinating kind of art.</p>
+          <div class="who">Andy Warhol</div>
         </div>
-        <div class="lesson">Haring's Pop Shop was this station. He got criticized for it and he was right anyway &mdash; direct sales at his own prices funded everything else.</div>
       </div>
     </div>
 
-    <!-- 6 -->
+    <!-- RIDE 6 -> 5 -->
+    <div class="ride">
+      <div class="track"></div>
+      <div class="rbody">
+        <div class="ridecard">
+          <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 6 to Stop 5</span>
+          <h5>Run one channel all the way clean</h5>
+          <p>Not all four at once. Pick the strongest one, get its numbers honest end to end, and use it as the template for the rest. A channel you understand completely beats four you're guessing at.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STOP 6 ================= -->
     <div class="station">
-      <div class="track"><div class="dot">6</div></div>
+      <div class="track"><div class="dots"><div class="d big e"></div><div class="d big l"></div></div></div>
       <div class="body">
-        <div class="when">Circa 2027</div>
+        <div class="stophead">
+          <span class="num">STOP 6</span>
+          <span class="when">Circa 2027</span>
+          <span class="svc e">Express &middot; Major</span>
+        </div>
         <h3>The Entity</h3>
-        <p>Two companies. One holds the artwork, the trademarks and the copyrights, and PJ owns all of it forever. The other runs the business, takes the risk, and is the only thing an investor or a landlord ever touches.</p>
-        <p>If the business fails, the artwork is untouched. If the business wins, the artwork licenses to it. This is the single most protective decision on the whole line and it costs almost nothing to do now.</p>
-        <div class="gate"><span class="lbl">Gate</span>Entity filed. EIN issued. One business bank account, PJ's control only. Trademarks filed on the names worth keeping.</div>
-        <div class="do">
-          <span class="lbl">The work</span>
-          <ol>
-            <li><b>Search the names</b> before filing anything. Find out now whether Platform's Edge is available, not after the signage is printed.</li>
-            <li><b>File the holding entity</b> and formally assign the existing artwork and marks into it, in writing.</li>
-            <li><b>Separate the money.</b> One account for the business, nothing personal running through it, from day one.</li>
-          </ol>
+
+        <h4>What this is</h4>
+        <p>Two companies. One holds the artwork, the trademarks and the copyrights, and PJ owns all of it forever. The other one runs the business, takes the risk, and is the only thing an investor or a landlord ever touches.</p>
+
+        <h4>What to look at</h4>
+        <p>If the business has a bad year, the artwork isn't in the room. If the business has a great year, the artwork licenses to it and gets paid. This is the cheapest protective move on the entire line and it's available right now.</p>
+
+        <h4>What to have ready</h4>
+        <ul>
+          <li><b>Search the names first.</b> Find out what's available before the signage gets printed, not after.</li>
+          <li><b>File the holding entity</b> and formally assign the existing artwork and marks into it, in writing.</li>
+          <li><b>One business bank account.</b> Nothing personal running through it, starting day one.</li>
+        </ul>
+
+        <div class="q">
+          <p>Own the name before somebody sells it back to you.</p>
+          <div class="who">Every artist who learned it the hard way</div>
         </div>
-        <div class="lesson">This is the station that turns fourteen years of work into an <b>asset</b> instead of a body of work somebody will have to untangle later.</div>
       </div>
     </div>
 
-    <!-- 7 HERE -->
+    <!-- RIDE 7 -> 6 -->
+    <div class="ride">
+      <div class="track"></div>
+      <div class="rbody">
+        <div class="ridecard">
+          <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 7 to Stop 6</span>
+          <h5>Make the list of what's worth keeping</h5>
+          <p>Short ride. While the archive is still fresh, write down every name, mark and design that PJ would be angry to lose. That list is exactly what gets filed at Stop 6, and it's much easier to write with the plates still spread out on the table.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STOP 7 ================= -->
     <div class="station">
-      <div class="track"><div class="dot here">7</div></div>
+      <div class="track"><div class="dots"><div class="d big e"></div><div class="d big l"></div></div></div>
       <div class="body">
-        <span class="here-tag">You are here</span>
-        <div class="when">2026</div>
-        <h3>The Archive</h3>
-        <p>The pile. Fourteen years of stencils, plates, prints, shirts, photos, receipts, press, and a cease and desist letter from the New York Gaming Commission that nobody has ever written about.</p>
-        <p>Everything at every station above depends on this pile becoming a record. It is the only work on this list that gets harder every single year and impossible if it waits. A stencil with no date is not evidence. A run with no count is not an edition. A story nobody wrote down is not history.</p>
-        <p>It needs no money, no lawyer, no landlord and no permission. It can start this week.</p>
-        <div class="gate"><span class="lbl">Gate</span>Photograph the plates. Date what can be dated. Write down what only PJ knows. Collect the press into one place. Count the stock.</div>
-        <div class="do">
-          <span class="lbl">The work &mdash; start here, this week</span>
-          <ol>
-            <li><b>One folder, one naming rule.</b> Date first, then name: 2026-09-09_platform-cart. Boring and permanent beats clever.</li>
-            <li><b>Photograph every plate flat,</b> in daylight, with a ruler in the frame for scale. Phone is fine. Consistency matters more than the camera.</li>
-            <li><b>Ten voice memos, ten minutes each.</b> Talk through what only PJ knows &mdash; which plate came first, who was there, what the C&amp;D was actually about. Nobody else can recover this.</li>
-            <li><b>One box</b> for press, receipts, flyers, the letter. Physical, in one place, before it gets sorted.</li>
-            <li><b>Count the stock.</b> Three stores, one sheet, actual numbers.</li>
-          </ol>
+        <div class="stophead">
+          <span class="num">STOP 7</span>
+          <span class="when">2026 &middot; You are here</span>
+          <span class="svc e">Express &middot; Major</span>
         </div>
-        <div class="lesson">Haring's subway drawings are gone. The photographs of them are the entire reason he is in museums. <b>The archive outlives the object.</b></div>
+        <h3>The Archive</h3>
+
+        <div class="ann hold">Now arriving. This stop needs no money, no lawyer, no landlord and nobody's permission. It can start this week.</div>
+
+        <h4>What this is</h4>
+        <p>The pile. Fourteen years of stencils, plates, prints, shirts, photos, receipts, press, and a cease and desist letter from the New York Gaming Commission that nobody has ever written about.</p>
+
+        <h4>What to look at</h4>
+        <p>Every stop above this one is built out of this pile. A stencil with a date is evidence. A run with a count is an edition. A story written down is history. Same objects either way — the only difference is whether somebody wrote it down.</p>
+        <p>And the good news is that the hard part is finished. Fourteen years of making the work is the part most people never do. This is just the part where it gets a name and a number.</p>
+
+        <h4>Start this week</h4>
+        <ul>
+          <li><b>One folder, one naming rule.</b> Date first, then name. Boring and permanent beats clever.</li>
+          <li><b>Photograph every plate flat,</b> daylight, ruler in the frame for scale. A phone is fine. Consistency matters more than the camera.</li>
+          <li><b>Ten voice memos, ten minutes each.</b> Which plate came first, who was there, what the C&amp;D was really about. Nobody else on earth can recover this.</li>
+          <li><b>One box</b> for press, receipts, flyers, the letter.</li>
+          <li><b>Count the stock.</b> Three stores, one sheet, real numbers.</li>
+        </ul>
+
+        <div class="q">
+          <p>Just DO!</p>
+          <div class="who">Sol LeWitt &middot; 1965 &middot; in a letter to a friend who was stuck</div>
+        </div>
       </div>
     </div>
 
-    <!-- 8 ORIGIN -->
-    <div class="station origin">
-      <div class="track"><div class="dot">8</div></div>
+    <!-- RIDE 8 -> 7 -->
+    <div class="ride">
+      <div class="track"></div>
+      <div class="rbody">
+        <div class="ridecard">
+          <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 8 to Stop 7</span>
+          <h5>Keep the cart running</h5>
+          <p>This is the ride PJ has already been on for fourteen years, and it isn't over. Nothing about the archive means stepping off the platform. The cart keeps going out. The difference from here on is that what goes out gets written down on the way.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= STOP 8 ================= -->
+    <div class="station last">
+      <div class="track"><div class="dots"><div class="d big e"></div><div class="d big l"></div></div></div>
       <div class="body">
-        <div class="when">Circa 2012</div>
+        <div class="stophead">
+          <span class="num">STOP 8</span>
+          <span class="when">Circa 2012</span>
+          <span class="svc e">Express &middot; Origin</span>
+        </div>
         <h3>The Platform</h3>
+
+        <h4>What this is</h4>
         <p>A homemade cart. A subway platform. Prints for sale to people waiting for a train.</p>
-        <p>This is the first station and it is also the last one, because it is the thing every station above sells. The cart is not what PJ did before the real business. The cart is the real business, and everything else is that format at a larger size.</p>
-        <div class="lesson">Judd's whole argument. The setting is not a venue you pass through on the way to a gallery. <b>The setting is the work.</b></div>
+
+        <h4>What to look at</h4>
+        <p>First stop on the line and also the last one, because it's the thing every stop above it sells. The cart is not what PJ did before the real business started. The cart <em>is</em> the real business. Everything after this is the same move at a bigger size.</p>
+
+        <div class="q">
+          <p>I don't think about art when I'm working. I try to think about life.</p>
+          <div class="who">Jean-Michel Basquiat</div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  <!-- WARNING SIGNS -->
-  <section>
-    <h2>Warning signs</h2>
-    <p style="margin-bottom:28px;">Six things that derail this line. The signs are written. The stories under them are PJ's, and they go in after the interview.</p>
-
-    <div class="sign">
-      <div class="hdr">Stand clear of the closing doors</div>
-      <p class="means">A door that shuts on you is a deal you signed without reading, a partner with a claim on your work, or a name you gave away. These do not reopen.</p>
-      <div class="slot">To be filled after the interview</div>
-    </div>
-
-    <div class="sign">
-      <div class="hdr">Step aside, let them off first</div>
-      <p class="means">Taking on the next thing before the last one has cleared. New channel, new location, new product, while the previous one is still unmeasured.</p>
-      <div class="slot">To be filled after the interview</div>
-    </div>
-
-    <div class="sign">
-      <div class="hdr">Do not lean on the door</div>
-      <p class="means">Building weight on something you do not control. A landlord's goodwill, one buyer, one platform's algorithm, one person's handshake.</p>
-      <div class="slot">To be filled after the interview</div>
-    </div>
-
-    <div class="sign">
-      <div class="hdr">If you see something, say something</div>
-      <p class="means">The problem you spot early and do not name. Numbers that do not reconcile, a partner going quiet, an agreement drifting from what was said out loud.</p>
-      <div class="slot">To be filled after the interview</div>
-    </div>
-
-    <div class="sign">
-      <div class="hdr">This train is running express</div>
-      <p class="means">Skipping stations to get somewhere faster. It works right up until you need the thing that was at the station you passed.</p>
-      <div class="slot">To be filled after the interview</div>
-    </div>
-
-    <div class="sign">
-      <div class="hdr">Last stop, everyone off</div>
-      <p class="means">A thing that ended. A store, a partnership, a brand name. Worth putting on the record what it was, why it ended, and what it cost.</p>
-      <div class="slot">To be filled after the interview</div>
     </div>
   </section>
 
@@ -660,9 +572,10 @@
   <section class="closer">
     <h2>Why backwards</h2>
     <p class="big">Everything old is new more than once.</p>
-    <p>Haring was dismissed as a graffiti kid, then canonized, then licensed onto a million products, then dismissed again as too commercial, and is now hanging in museums that would not have let him in the door in 1982. Four turns of the same wheel around one body of work.</p>
-    <p>The work does not change. The market comes back around to it. That is why the archive at station 7 matters more than any single sale: the only way to be there when the cycle comes back around is to still have the work, still own it, and still be able to prove it is yours.</p>
-    <p style="color:var(--cement);margin-top:28px;font-size:16px;">The cart was station 8. It is also the thing station 1 is selling. The line runs both ways.</p>
+    <p>Haring got called a graffiti kid, then got canonized, then got written off as too commercial, and now hangs in museums that wouldn't have let him in the door in 1982. Four turns of the same wheel around one body of work, and the work never changed once.</p>
+    <p>The market leaves and the market comes back. That's not a risk, it's a schedule. The only thing that decides whether PJ is there when it comes back around is whether he still has the work, still owns it, and can still prove it's his.</p>
+    <p style="margin-top:26px;font-weight:700;">The cart was Stop 8. The cart is also what Stop 1 is selling. The line runs both ways.</p>
+    <div class="ann" style="margin-top:30px;">This is the last stop on this train. Everybody stays on.</div>
   </section>
 
 </div>
