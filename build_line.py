@@ -9,14 +9,22 @@ OUT = "/Users/michaelweinfeld/Documents/2026/PJ O'Rourke/Milestones1/index.html"
 
 # ---- the eight services. index 1..8. band k terminates at stop (9-k) ----
 SERVICES = [
-    dict(n=1, bullet="W", name="The Work",     color="#EE352E", born="Stop 8", note="Prints, plates, the hand-to-hand sale. Runs the whole line."),
-    dict(n=2, bullet="R", name="The Record",   color="#00933C", born="Stop 7", note="Dates, counts, photographs, the things only PJ knows."),
-    dict(n=3, bullet="O", name="Ownership",    color="#0039A6", born="Stop 6", note="The entity, the trademarks, the copyrights."),
-    dict(n=4, bullet="T", name="Trade",        color="#FF6319", born="Stop 5", note="Channels, margins, the business that pays for the rest."),
-    dict(n=5, bullet="E", name="Editions",     color="#B933AD", born="Stop 4", note="Runs stated and closed. Stock becomes catalogue."),
-    dict(n=6, bullet="M", name="Mission",      color="#FCCC0A", born="Stop 3", note="The foundation and what it spends the money on.", dark=True),
-    dict(n=7, bullet="X", name="Exhibition",   color="#6CBE45", born="Stop 2", note="Museums, books, loans out and back."),
-    dict(n=8, bullet="L", name="Licensing",    color="#996633", born="Stop 1", note="The work earning without PJ in the room."),
+    dict(n=1, bullet="L", name="The Work",     color="#A7A9AC", born="Stop 8", dark=True,
+         note="The L. The line PJ started selling on, and the only service that runs the whole length of this map."),
+    dict(n=2, bullet="A", name="The Archive",  color="#0039A6", born="Stop 7",
+         note="Dates, counts, photographs, the things only PJ knows."),
+    dict(n=3, bullet="M", name="The Marks",    color="#FF6319", born="Stop 6",
+         note="The entity, the trademarks, the copyrights."),
+    dict(n=4, bullet="G", name="The Goods",    color="#6CBE45", born="Stop 5",
+         note="Channels, margins, the business that pays for the rest."),
+    dict(n=5, bullet="4", name="The Editions", color="#00933C", born="Stop 4",
+         note="Runs stated and closed. Stock becomes catalogue."),
+    dict(n=6, bullet="Q", name="The Mission",  color="#FCCC0A", born="Stop 3", dark=True,
+         note="The foundation, and what it spends the money on."),
+    dict(n=7, bullet="J", name="Exhibition",   color="#996633", born="Stop 2",
+         note="Museums, books, loans out and back."),
+    dict(n=8, bullet="7", name="Licensing",    color="#B933AD", born="Stop 1",
+         note="The work earning without PJ in the room."),
 ]
 
 # ---- stops, page order top to bottom: Stop 1 (2075) .. Stop 8 (2012) ----
@@ -73,7 +81,7 @@ STOPS = [
             ("A funding rule in writing.", "What share of licensing income goes to the mission, automatically, before anybody debates it."),
         ]),
         quote=("It takes a great deal of time and thought to install work properly.", "Donald Judd &middot; who bought the buildings instead of renting the walls"),
-        opens="Mission",
+        opens="The Mission",
     ),
     dict(
         n=4, year="Circa 2030", title="The Catalogue", express=False, tag="Local only",
@@ -93,7 +101,7 @@ STOPS = [
             ("Number what can still be numbered.", "Start with what is on the shelf today."),
         ]),
         quote=("The idea becomes a machine that makes the art.", "Sol LeWitt &middot; 1967 &middot; he sold the instruction, never the wall"),
-        opens="Editions",
+        opens="The Editions",
     ),
     dict(
         n=5, year="Circa 2028", title="The Company", express=False, tag="Local only",
@@ -110,7 +118,7 @@ STOPS = [
             ("Ninety days logged daily.", "One honest quarter beats three years of memory."),
         ]),
         quote=("Being good in business is the most fascinating kind of art.", "Andy Warhol"),
-        opens="Trade",
+        opens="The Goods",
     ),
     dict(
         n=6, year="Circa 2027", title="The Entity", express=True, tag="Express &middot; Major",
@@ -133,7 +141,7 @@ STOPS = [
             ("One business bank account.", "Nothing personal running through it, starting day one."),
         ]),
         quote=("Own the name before somebody sells it back to you.", "Not a quotation &mdash; the lesson, plainly"),
-        opens="Ownership",
+        opens="The Marks",
     ),
     dict(
         n=7, year="2026 &middot; You are here", title="The Archive", express=True, tag="Express &middot; Major",
@@ -159,14 +167,14 @@ STOPS = [
             ("Count the stock.", "Three stores, one sheet, real numbers."),
         ]),
         quote=("Just DO!", "Sol LeWitt &middot; 1965 &middot; in a letter to a friend who was stuck"),
-        opens="The Record",
+        opens="The Archive",
     ),
     dict(
         n=8, year="Circa 2012", title="The Platform", express=True, tag="Express &middot; Origin",
         ann=None,
         blocks=[
             ("What this is",
-             "A homemade cart. A subway platform. Prints for sale to people waiting for a train."),
+             "A homemade cart. The L train platform. Prints for sale to people waiting for a train."),
             ("What to look at",
              "First stop on the line and also the last one, because it is the thing every stop above it sells. The cart is not what PJ did before the real business started. The cart <em>is</em> the real business. Everything after this is the same move at a bigger size."),
         ],
@@ -423,7 +431,7 @@ def build():
     <h2>How to read this</h2>
     <p class="lede">Start at the end. Work back to where you're standing.</p>
     <p>Most plans run forward and turn into a wish list. This one runs backwards. The last stop is fixed, and every stop above it is there because the one below it makes it possible.</p>
-    <p>Watch the left-hand side of the page. At the top, eight coloured services run side by side &mdash; the whole system, working at once. At every stop going down, one of them ends, because that is the year it hadn't started yet. By the bottom of the page there is one track left, and a man with a cart.</p>
+    <p>The grey line on the far left is the L. It is the line PJ started selling on, it runs the entire length of this map, and it is the last one standing at the bottom of the page.</p>\n    <p>Watch the left-hand side of the page. At the top, eight coloured services run side by side &mdash; the whole system, working at once. At every stop going down, one of them ends, because that is the year it hadn't started yet. By the bottom of the page there is one track left, and a man with a cart.</p>
     <p>Read down to see where it came from. Read up to see what it becomes.</p>
   </section>
 
@@ -445,15 +453,15 @@ def build():
     W("""
     <div class="legend" style="margin-top:18px">
       <div class="lrow">
-        <span class="bul dia" style="background:#FF6319"><span>E</span></span>
+        <span class="bul dia" style="background:#0C0C0C"><span>&#9670;</span></span>
         <p><b>Express</b>Five stops. The ones that change what PJ legally owns and what anyone can prove. Big dot on the map.</p>
       </div>
       <div class="lrow">
-        <span class="bul" style="background:#0039A6">L</span>
+        <span class="bul" style="background:#0C0C0C">&bull;</span>
         <p><b>Local</b>All eight. Same track, same terminal, three extra stops where the money and the record get built. Small dot on the map.</p>
       </div>
       <div class="lrow">
-        <span class="bul" style="background:#0C0C0C">&bull;</span>
+        <span class="bul" style="background:#FFFFFF;border:2px solid #0C0C0C;color:#0C0C0C">&#8644;</span>
         <p><b>Both trains arrive</b>The Express reaches the Foundation sooner. The Local reaches it with the catalogue counted, the numbers clean and the show already booked. Neither is wrong. Know which one you are on.</p>
       </div>
     </div>
