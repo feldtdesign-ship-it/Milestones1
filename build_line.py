@@ -65,7 +65,7 @@ STOPS = [
              "PJ has been on the platform since 2012. Fourteen years of work is not a warm-up for this. It is the qualification."),
         ],
         now=("Already on this platform",
-             "ALL CITY is the mission-shaped thing. A game about the subway, made by the man who sold on the platforms, "
+             "ALL CITY is the mission-shaped thing. A game about the subway, carrying PJ's name and his world, "
              "is something a foundation can hand to a room full of kids without explaining it first."),
         listy=("What to have ready", [
             ("The mission in one sentence.", "Who it serves and what they get. If it takes a paragraph it isn't decided yet."),
@@ -147,9 +147,9 @@ STOPS = [
              "And the good news is that the hard part is finished. Fourteen years of making the work is the part most people never do. This is just the part where it gets a name and a number."),
         ],
         now=("Already on this platform",
-             "ALL CITY is the proof. Twenty-odd numbered builds, a written story bible, original music, three cut videos &mdash; "
-             "all of it dated, versioned and kept. The archive habit is not something PJ has to learn at this stop. "
-             "He is already doing it. The stencils are just the part that never got the same treatment."),
+             "ALL CITY shows what this looks like when it is done properly. Numbered builds going back to v3, a written story bible, "
+             "original music, three cut videos &mdash; dated, versioned and kept, nothing saved over. "
+             "That is the standard. The stencils and the plates are the part that has never had it."),
         naming=True,
         listy=("Start this week", [
             ("One folder, one naming rule.", "Date first, then name. Boring and permanent beats clever."),
@@ -212,9 +212,8 @@ ADVISORIES = [
 
 
 NAMING_BLOCK = """        <div class="naming">
-          <span class="lbl">A naming convention &mdash; already running, just not here yet</span>
-          <p style="margin-top:0">PJ already does this. It is how ALL CITY is built. The game is numbered to v25 and builds going back to v3 are still sitting on disk, still playable, none of them saved over. That is the whole discipline this stop asks for, already working, on his own project.</p>
-          <p>It has simply never been pointed at the plates. Same five rules, same folder, different subject. Every file gets one name, built the same way every time:</p>
+          <span class="lbl">A naming convention</span>
+          <p style="margin-top:0">One system, five rules, and it never changes. Every file gets one name, built the same way every time:</p>
           <div class="fmt"><b>2026-09-09</b>_<b>plate</b>_train-king_<b>v01</b>.jpg</div>
           <ol>
             <li><b>Date first, year first.</b> 2026-09-09, never 9/9/26. Written this way the files sort themselves into order forever, in any folder, on any machine.</li>
@@ -223,7 +222,7 @@ NAMING_BLOCK = """        <div class="naming">
             <li><b>Then the version, and never overwrite.</b> v01 stays on disk when v02 is made. This is the whole trick and it is the one rule people break. A version you kept is evidence. A version you saved over is gone.</li>
             <li><b>The name carries the facts.</b> If you have to open the file to know what it is, the name failed. Rename it.</li>
           </ol>
-          <p>Five rules. No software, no subscription, no app that gets discontinued. It works in a folder on a laptop and it will still work in fifty years, which is the actual requirement. And PJ has already proved he will keep to it, because he has been keeping to it since v3.</p>
+          <p>Five rules. No software, no subscription, no app that gets discontinued. It works in a folder on a laptop and it will still work in fifty years, which is the actual requirement.</p>
         </div>
 """
 
