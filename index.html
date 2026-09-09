@@ -6,93 +6,111 @@
 <title>The Line Runs Both Ways</title>
 <style>
   :root{
-    --ink:#0C0C0C;
-    --paper:#F6F2E8;
-    --card:#FFFFFF;
-    --grey:#78766F;
-    --rule:#CFCABB;
-    --mta-y:#FCCC0A;
-    --mta-r:#EE352E;
-    --mta-g:#00933C;
-    --mta-b:#0039A6;
+    --ink:#0C0C0C; --paper:#F6F2E8; --card:#FFFFFF;
+    --grey:#78766F; --rule:#CFCABB;
+    --mta-y:#FCCC0A; --mta-r:#EE352E; --mta-g:#00933C; --mta-b:#0039A6; --mta-l:#A7A9AC;
   }
   *{box-sizing:border-box}
   html{background:var(--paper)}
-  body{
-    margin:0;background:var(--paper);color:var(--ink);
+  body{margin:0;background:var(--paper);color:var(--ink);
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;
-  }
+    font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1000px;margin:0 auto;padding:0 28px 120px}
   p{max-width:60ch}
 
-  .cover{padding:72px 0 36px}
-  .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:26px}
-  h1{font-size:64px;line-height:.94;letter-spacing:-.035em;margin:0 0 22px;text-transform:uppercase;font-weight:700}
-  .sub{font-size:21px;line-height:1.3;max-width:32ch;margin:0 0 34px}
-  .stamp{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);border-top:2px solid var(--ink);padding-top:12px;font-weight:700}
+  .cover{padding:70px 0 30px}
+  .kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;margin-bottom:24px}
+  h1{font-size:clamp(46px,11vw,104px);line-height:.86;letter-spacing:-.05em;
+     margin:0 0 24px;text-transform:uppercase;font-weight:700}
+  .sub{font-size:clamp(18px,2.4vw,23px);line-height:1.25;max-width:30ch;margin:0 0 32px}
+  .stamp{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);
+     border-top:2px solid var(--ink);padding-top:12px;font-weight:700}
 
-  h2{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin:0 0 16px}
-  .rule{border:0;border-top:2px solid var(--ink);margin:60px 0 34px}
-  .lede{font-size:32px;line-height:1.04;letter-spacing:-.025em;margin:0 0 16px;text-transform:uppercase;font-weight:700;max-width:22ch}
+  h2{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;margin:0 0 16px}
+  .rule{border:0;border-top:2px solid var(--ink);margin:58px 0 32px}
+  .lede{font-size:clamp(26px,4vw,40px);line-height:.98;letter-spacing:-.035em;
+     margin:0 0 16px;text-transform:uppercase;font-weight:700;max-width:20ch}
 
   .ann{background:var(--ink);color:var(--paper);padding:14px 18px;margin:0 0 22px;max-width:60ch;
-       font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;line-height:1.45}
+    font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;line-height:1.45}
   .ann.hold{background:var(--mta-y);color:var(--ink)}
 
-  /* route bullets */
-  .bul{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;
-       border-radius:50%;color:#fff;font-weight:700;font-size:14px;flex:0 0 26px}
+  .start{background:var(--ink);color:var(--paper);padding:26px 26px 22px;margin:0 0 30px;max-width:60ch}
+  .start .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--mta-y);display:block;margin-bottom:12px}
+  .start h3{font-size:clamp(26px,4.4vw,42px);line-height:.95;letter-spacing:-.035em;
+     text-transform:uppercase;font-weight:700;margin:0 0 14px}
+  .start p{max-width:none;font-size:16px;margin:0 0 14px}
+  .start ol{margin:0 0 4px;padding-left:22px}
+  .start li{font-size:16px;margin-bottom:8px}
+  .start li b{color:var(--mta-y)}
+
+  .bul{display:inline-flex;align-items:center;justify-content:center;width:27px;height:27px;
+    border-radius:50%;color:#fff;font-weight:700;font-size:14px;flex:0 0 27px}
   .bul.dk{color:#0C0C0C}
   .bul.dia{border-radius:2px;transform:rotate(45deg);width:23px;height:23px;flex:0 0 23px}
-  .bul.dia span{transform:rotate(-45deg)}
+  .bul.dia span{transform:rotate(-45deg);font-size:11px}
 
-  /* legend */
-  .legend{background:var(--card);border:2px solid var(--ink);padding:6px 20px;margin:26px 0 0;max-width:60ch}
+  .legend{background:var(--card);border:2px solid var(--ink);padding:6px 20px;margin:24px 0 0;max-width:60ch}
   .lrow{display:flex;align-items:flex-start;gap:14px;padding:11px 0}
   .lrow+.lrow{border-top:1px solid var(--rule)}
   .lrow p{margin:0;font-size:15px}
   .lrow b{display:block;text-transform:uppercase;letter-spacing:.06em;font-size:13px}
-  .lrow .born{color:var(--grey);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+  .lrow .born{color:var(--grey);font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;white-space:nowrap}
 
-  /* ---- the track ---- */
   .row{display:grid;grid-template-columns:132px 1fr}
   .trk{position:relative}
   .ln{position:absolute;top:0;bottom:0;width:9px}
   .ln.end{bottom:auto;height:20px}
   .ln.b1{left:8px}.dot.x.b1{left:4px}.dot.o.b1{left:7px}.ln.b2{left:23px}.dot.x.b2{left:19px}.dot.o.b2{left:22px}.ln.b3{left:38px}.dot.x.b3{left:34px}.dot.o.b3{left:37px}.ln.b4{left:53px}.dot.x.b4{left:49px}.dot.o.b4{left:52px}.ln.b5{left:68px}.dot.x.b5{left:64px}.dot.o.b5{left:67px}.ln.b6{left:83px}.dot.x.b6{left:79px}.dot.o.b6{left:82px}.ln.b7{left:98px}.dot.x.b7{left:94px}.dot.o.b7{left:97px}.ln.b8{left:113px}.dot.x.b8{left:109px}.dot.o.b8{left:112px}
   .mk{position:absolute;top:0;left:0;right:0;height:0;z-index:3}
-  .bar{position:absolute;left:12px;top:18px;height:3px;background:var(--ink);
-       width:calc((var(--span) - 1) * 15px)}
+  .bar{position:absolute;left:12px;top:18px;height:3px;background:var(--ink);width:calc((var(--span) - 1) * 15px)}
   .dot{position:absolute;border-radius:50%;background:var(--ink);border:3px solid var(--paper)}
   .dot.x{width:17px;height:17px;top:11px}
   .dot.o{width:11px;height:11px;top:14px}
 
   .body{padding:0 0 44px;min-height:74px}
-  .stophead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-  .num{font-size:13px;font-weight:700;letter-spacing:.14em}
-  .when{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:700}
-  .svc{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;color:#fff}
+  .head{display:flex;align-items:flex-start;gap:clamp(14px,2.4vw,26px);margin:0 0 6px}
+  .stopnum{font-size:clamp(54px,10vw,112px);line-height:.74;letter-spacing:-.07em;
+     font-weight:700;flex:0 0 auto;margin-top:-6px}
+  .headtext{min-width:0}
+  .body h3{font-size:clamp(30px,5.6vw,62px);line-height:.9;letter-spacing:-.045em;
+     margin:0 0 10px;text-transform:uppercase;font-weight:700}
+  .meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .formal{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+  .when{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:700}
+  .svc{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;color:#fff}
   .svc.e{background:#FF6319}
   .svc.l{background:var(--mta-b)}
-  .body h3{font-size:38px;line-height:.98;letter-spacing:-.03em;margin:6px 0 14px;text-transform:uppercase;font-weight:700}
   .opens{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.12em;
-         text-transform:uppercase;font-weight:700;color:var(--grey);margin:0 0 14px}
+     text-transform:uppercase;font-weight:700;color:var(--grey);margin:16px 0 4px}
   .body h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin:20px 0 5px}
   .body h4+p{margin-top:0}
   .body ul{max-width:60ch;padding-left:20px;margin:5px 0 0}
   .body li{margin-bottom:7px}
 
   .q{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:17px 0;margin:22px 0 0;max-width:60ch}
-  .q p{font-size:24px;line-height:1.2;letter-spacing:-.02em;margin:0 0 8px;font-weight:700}
+  .q p{font-size:clamp(20px,2.7vw,27px);line-height:1.15;letter-spacing:-.03em;margin:0 0 8px;font-weight:700}
   .q .who{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);font-weight:700}
 
   .ridecard{background:var(--card);border-left:9px solid var(--mta-y);padding:15px 20px;max-width:60ch}
   .ridecard .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--grey);display:block;margin-bottom:5px}
-  .ridecard h5{font-size:19px;margin:0 0 7px;text-transform:uppercase;letter-spacing:-.01em;font-weight:700}
+  .ridecard h5{font-size:19px;margin:0 0 7px;text-transform:uppercase;letter-spacing:-.015em;font-weight:700}
   .ridecard p{margin:0;font-size:16px}
 
-  /* ---- service advisories ---- */
+  .now{background:var(--card);border-left:9px solid var(--ink);padding:15px 18px;margin:20px 0 0;max-width:60ch}
+  .now .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:7px}
+  .now p{margin:0;font-size:16px;max-width:none}
+
+  .naming{background:var(--ink);color:var(--paper);padding:20px;margin:20px 0 0;max-width:60ch}
+  .naming .lbl{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:10px;color:var(--mta-y)}
+  .naming .fmt{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:15px;line-height:1.9;
+    background:rgba(255,255,255,.08);padding:12px 14px;margin:0 0 14px;overflow-x:auto;white-space:nowrap}
+  .naming .fmt b{color:var(--mta-y)}
+  .naming ol{margin:0;padding-left:20px}
+  .naming li{margin-bottom:8px;font-size:15px}
+  .naming li b{color:var(--mta-y)}
+  .naming p{max-width:none;font-size:15px}
+
   .adv{background:var(--card);border:2px solid var(--ink);margin:0 0 16px;max-width:60ch}
   .adv .hd{padding:8px 16px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
   .adv .hd.change{background:var(--mta-y);color:var(--ink)}
@@ -102,42 +120,24 @@
   .adv .hd.exp{background:var(--mta-g);color:#fff}
   .adv .hd.last{background:var(--mta-r);color:#fff}
   .adv .in{padding:14px 16px 16px}
-  .adv h5{font-size:21px;margin:0 0 8px;text-transform:uppercase;letter-spacing:-.015em;font-weight:700}
+  .adv h5{font-size:clamp(18px,2.4vw,24px);margin:0 0 8px;text-transform:uppercase;letter-spacing:-.025em;font-weight:700}
   .adv p{margin:0 0 12px;font-size:16px;max-width:none}
   .slot{border:2px dashed var(--rule);padding:11px 13px;font-size:12px;letter-spacing:.12em;
-        text-transform:uppercase;font-weight:700;color:var(--grey)}
+    text-transform:uppercase;font-weight:700;color:var(--grey)}
 
-  .closer{border-top:9px solid var(--mta-r);padding-top:26px;margin-top:14px}
-  .closer .big{font-size:40px;line-height:1;text-transform:uppercase;font-weight:700;letter-spacing:-.03em;max-width:20ch;margin:0 0 18px}
+  .closer{border-top:9px solid var(--mta-l);padding-top:26px;margin-top:14px}
+  .closer .big{font-size:clamp(28px,5vw,52px);line-height:.94;text-transform:uppercase;font-weight:700;
+    letter-spacing:-.04em;max-width:18ch;margin:0 0 18px}
   .closer p{font-size:18px}
 
-  .now{background:var(--card);border-left:9px solid var(--ink);padding:15px 18px;margin:20px 0 0;max-width:60ch}
-  .now .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:7px}
-  .now p{margin:0 0 10px;font-size:16px;max-width:none}
-  .now p:last-child{margin:0}
-  .naming{background:var(--ink);color:var(--paper);padding:18px 20px;margin:20px 0 0;max-width:60ch}
-  .naming .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:10px;color:var(--mta-y)}
-  .naming .fmt{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:15px;line-height:1.9;
-               background:rgba(255,255,255,.08);padding:12px 14px;margin:0 0 14px;overflow-x:auto;white-space:nowrap}
-  .naming .fmt b{color:var(--mta-y);font-weight:700}
-  .naming ol{margin:0;padding-left:20px;max-width:none}
-  .naming li{margin-bottom:8px;font-size:15px}
-  .naming li b{color:var(--mta-y)}
-  .naming p{max-width:none;font-size:15px}
-
   @media (max-width:700px){
-    h1{font-size:40px}
-    .lede{font-size:25px}
-    .body h3{font-size:27px}
-    .closer .big{font-size:28px}
-    .q p{font-size:20px}
-    .adv h5{font-size:18px}
     .row{grid-template-columns:80px 1fr}
     .ln{width:6px}
     .ln.b1{left:5px}.dot.x.b1{left:1px}.dot.o.b1{left:3px}.ln.b2{left:14px}.dot.x.b2{left:10px}.dot.o.b2{left:12px}.ln.b3{left:23px}.dot.x.b3{left:19px}.dot.o.b3{left:21px}.ln.b4{left:32px}.dot.x.b4{left:28px}.dot.o.b4{left:30px}.ln.b5{left:41px}.dot.x.b5{left:37px}.dot.o.b5{left:39px}.ln.b6{left:50px}.dot.x.b6{left:46px}.dot.o.b6{left:48px}.ln.b7{left:59px}.dot.x.b7{left:55px}.dot.o.b7{left:57px}.ln.b8{left:68px}.dot.x.b8{left:64px}.dot.o.b8{left:66px}
     .bar{left:8px;width:calc((var(--span) - 1) * 9px)}
     .dot.x{width:13px;height:13px;top:13px}
     .dot.o{width:9px;height:9px;top:15px}
+    .head{gap:12px}
   }
 </style>
 </head>
@@ -147,37 +147,51 @@
   <section class="cover">
     <div class="kicker">Platform's Edge &nbsp;/&nbsp; Working document</div>
     <h1>The Line<br>Runs Both<br>Ways</h1>
-    <p class="sub">A map of PJ O'Rourke II's career, read from the last stop backwards to the platform he is standing on.</p>
-    <div class="stamp">Draft v4 &nbsp;&middot;&nbsp; For PJ &nbsp;&middot;&nbsp; Feldt Design</div>
+    <p class="sub">A map of your career, read from the last stop backwards to the platform you are standing on.</p>
+    <div class="stamp">Draft v9 &nbsp;&middot;&nbsp; For PJ &nbsp;&middot;&nbsp; Feldt Design</div>
   </section>
 
   <section>
+    <div class="start">
+      <span class="lbl">If you read nothing else</span>
+      <h3>Photograph the plates.<br>Everything else waits.</h3>
+      <p>Stop 7 is where you are standing, and it is the only stop on this page that costs nothing and needs nobody. No money, no lawyer, no landlord, no permission. Five things, starting this week:</p>
+      <ol>
+        <li><b>One folder, one naming rule.</b> Date first, then name.</li>
+        <li><b>Photograph every plate flat,</b> daylight, ruler in the frame.</li>
+        <li><b>Ten voice memos, ten minutes each.</b> What only you know.</li>
+        <li><b>One box</b> for press, receipts, flyers, the letter.</li>
+        <li><b>Count the stock.</b> Three stores, one sheet.</li>
+      </ol>
+      <p style="margin-top:14px;margin-bottom:0">The other seven stops are what that pile turns into. Read on when you want to know why.</p>
+    </div>
+
     <div class="ann">This is a Reissue-bound train. The next stop is the Archive. Stand clear of the closing doors.</div>
     <h2>How to read this</h2>
-    <p class="lede">Start at the end. Work back to where you're standing.</p>
+    <p class="lede">Start at the end. Work back to where you are standing.</p>
     <p>Most plans run forward and turn into a wish list. This one runs backwards. The last stop is fixed, and every stop above it is there because the one below it makes it possible.</p>
-    <p>The grey line on the far left is the L. It is the line PJ started selling on, it runs the entire length of this map, and it is the last one standing at the bottom of the page.</p>
-    <p>Watch the left-hand side of the page. At the top, eight coloured services run side by side &mdash; the whole system, working at once. At every stop going down, one of them ends, because that is the year it hadn't started yet. By the bottom of the page there is one track left, and a man with a cart.</p>
+    <p>The grey line on the far left is the L. It is the line you started selling on, it runs the entire length of this map, and it is the last one standing at the bottom of the page.</p>
+    <p>Watch that left-hand edge. At the top, eight coloured services run side by side, the whole system working at once. At every stop going down, one of them ends, because that is the year it had not started yet. By the bottom of the page there is one grey track left, and a man with a cart.</p>
     <p>Read down to see where it came from. Read up to see what it becomes.</p>
   </section>
 
   <section>
     <h2>The services</h2>
     <div class="legend">
-      <div class="lrow"><span class="bul dk" style="background:#A7A9AC">L</span><p><b>The Work</b>The L. The line PJ started selling on, and the only service that runs the whole length of this map.</p><span class="born">Begins<br>Stop 8</span></div>
-      <div class="lrow"><span class="bul" style="background:#0039A6">A</span><p><b>The Archive</b>Dates, counts, photographs, the things only PJ knows.</p><span class="born">Begins<br>Stop 7</span></div>
-      <div class="lrow"><span class="bul" style="background:#FF6319">M</span><p><b>The Marks</b>The entity, the trademarks, the copyrights.</p><span class="born">Begins<br>Stop 6</span></div>
+      <div class="lrow"><span class="bul dk" style="background:#A7A9AC">L</span><p><b>The Work</b>The L. The line you started selling on, and the only service that runs the whole length of this map.</p><span class="born">Begins<br>Stop 8</span></div>
+      <div class="lrow"><span class="bul" style="background:#0039A6">A</span><p><b>The Archive</b>Dates, counts, photographs, the things only you know.</p><span class="born">Begins<br>Stop 7</span></div>
+      <div class="lrow"><span class="bul" style="background:#FF6319">M</span><p><b>The Marks</b>The company, the trademarks, the copyrights.</p><span class="born">Begins<br>Stop 6</span></div>
       <div class="lrow"><span class="bul" style="background:#6CBE45">G</span><p><b>The Goods</b>Channels, margins, the business that pays for the rest.</p><span class="born">Begins<br>Stop 5</span></div>
       <div class="lrow"><span class="bul" style="background:#00933C">4</span><p><b>The Editions</b>Runs stated and closed. Stock becomes catalogue.</p><span class="born">Begins<br>Stop 4</span></div>
       <div class="lrow"><span class="bul dk" style="background:#FCCC0A">Q</span><p><b>The Mission</b>The foundation, and what it spends the money on.</p><span class="born">Begins<br>Stop 3</span></div>
       <div class="lrow"><span class="bul" style="background:#996633">J</span><p><b>Exhibition</b>Museums, books, loans out and back.</p><span class="born">Begins<br>Stop 2</span></div>
-      <div class="lrow"><span class="bul" style="background:#B933AD">7</span><p><b>Licensing</b>The work earning without PJ in the room.</p><span class="born">Begins<br>Stop 1</span></div>
+      <div class="lrow"><span class="bul" style="background:#B933AD">7</span><p><b>Licensing</b>The work earning while you are somewhere else.</p><span class="born">Begins<br>Stop 1</span></div>
     </div>
 
     <div class="legend" style="margin-top:18px">
       <div class="lrow">
         <span class="bul dia" style="background:#0C0C0C"><span>&#9670;</span></span>
-        <p><b>Express</b>Five stops. The ones that change what PJ legally owns and what anyone can prove. Big dot on the map.</p>
+        <p><b>Express</b>Five stops. The ones that change what you legally own and what anyone can prove. Big dot on the map.</p>
       </div>
       <div class="lrow">
         <span class="bul" style="background:#0C0C0C">&bull;</span>
@@ -198,21 +212,24 @@
       <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5" style="background:#00933C"></i><i class="ln b6" style="background:#FCCC0A"></i><i class="ln b7" style="background:#996633"></i><i class="ln b8" style="background:#B933AD"></i></div>
       <div class="body" style="padding-bottom:30px">
         <div class="when">Circa 2075 &middot; the whole system</div>
-        <p style="margin:8px 0 0;max-width:52ch">Eight services running at once. Every one of them started somewhere below.</p>
+        <p style="margin:8px 0 0;max-width:50ch">Eight services running at once. Every one of them started somewhere below.</p>
       </div>
     </div>
     <div class="row">
-      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5" style="background:#00933C"></i><i class="ln b6" style="background:#FCCC0A"></i><i class="ln b7" style="background:#996633"></i><i class="ln b8 end" style="background:#B933AD"></i><div class="mk"><i class="bar b1" style="--span:8"></i><i class="dot x b1"></i><i class="dot x b2"></i><i class="dot x b3"></i><i class="dot x b4"></i><i class="dot x b5"></i><i class="dot x b6"></i><i class="dot x b7"></i><i class="dot x b8"></i></div></div>
+      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5" style="background:#00933C"></i><i class="ln b6" style="background:#FCCC0A"></i><i class="ln b7" style="background:#996633"></i><i class="ln b8 end" style="background:#B933AD"></i><div class="mk"><i class="bar" style="--span:8"></i><i class="dot x b1"></i><i class="dot x b2"></i><i class="dot x b3"></i><i class="dot x b4"></i><i class="dot x b5"></i><i class="dot x b6"></i><i class="dot x b7"></i><i class="dot x b8"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 1</span><span class="when">Circa 2075</span><span class="svc e">Express &middot; Terminal</span></div>
-        <h3>The Reissue</h3>
-        <div class="opens"><span class="bul" style="background:#B933AD">7</span>Service begins here &mdash; Licensing</div>
+        <div class="head"><div class="stopnum">01</div><div class="headtext">
+          <h3>The Loop<br>Starts Again</h3>
+          <div class="meta"><span class="formal">The Reissue</span><span class="when">Circa 2075</span><span class="svc e">Express &middot; Terminal</span></div>
+        </div></div>
+        <div class="opens"><span class="bul" style="background:#B933AD">7</span>Service begins here. Licensing</div>
         <h4>What this is</h4>
-        <p>A stencil cut in 2016 comes back. A licensed collaboration. A museum shop reprint. A capsule with a brand that didn't exist when the original sold out. People who weren't born yet buy it new and think it is new.</p>
+        <p>A stencil you cut in 2016 comes back. A licensed collaboration. A museum shop reprint. A capsule with a brand that did not exist when the original sold out. People who were not born yet buy it new and think it is new.</p>
         <h4>What to look at</h4>
-        <p>This isn't the goal. It's the receipt that says the goal worked. Reissues happen to artists whose work is owned, dated and defended by somebody. They don't happen to piles.</p>
+        <p>This is not the goal. It is the receipt that says the goal worked. Reissues happen to artists whose work is owned, dated and defended by somebody. They do not happen to piles.</p>
         <h4>What has to be true</h4>
-        <p>Every design authenticated, dated and traceable to a physical plate, with one entity holding the copyright and the marks. All of that gets built further down the line.</p>
+        <p>Every design authenticated, dated and traceable to a physical plate, with one company holding the copyright and the marks. All of it gets built further down this page.</p>
+        <div class="now"><span class="lbl">Already on this platform</span><p>Gumbit is the likeliest thing you have to come back around. Figures reissue better than prints, better than shirts, better than anything else on the cart. The run you make in 2026 is the one a 2075 capsule points at.</p></div>
         <div class="q"><p>Art is for everybody.</p><div class="who">Keith Haring</div></div>
       </div>
     </div>
@@ -222,27 +239,29 @@
         <div class="ridecard">
           <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 2 to Stop 1</span>
           <h5>Let it come back around</h5>
-          <p>The longest ride on the line and there is almost nothing to do on it. The work is made. The record is kept. The market goes away and comes back on its own schedule, and it always comes back. The only job here is to still own the thing when it does.</p>
+          <p>The longest ride on the line and there is almost nothing to do on it. The work is made. The record is kept. The market goes away and comes back on its own schedule, and it always comes back. Your only job here is to still own the thing when it does.</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5" style="background:#00933C"></i><i class="ln b6" style="background:#FCCC0A"></i><i class="ln b7 end" style="background:#996633"></i><div class="mk"><i class="bar b1" style="--span:7"></i><i class="dot o b1"></i><i class="dot o b2"></i><i class="dot o b3"></i><i class="dot o b4"></i><i class="dot o b5"></i><i class="dot o b6"></i><i class="dot o b7"></i></div></div>
+      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5" style="background:#00933C"></i><i class="ln b6" style="background:#FCCC0A"></i><i class="ln b7 end" style="background:#996633"></i><div class="mk"><i class="bar" style="--span:7"></i><i class="dot o b1"></i><i class="dot o b2"></i><i class="dot o b3"></i><i class="dot o b4"></i><i class="dot o b5"></i><i class="dot o b6"></i><i class="dot o b7"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 2</span><span class="when">Circa 2050</span><span class="svc l">Local only</span></div>
-        <h3>The Retrospective</h3>
-        <div class="opens"><span class="bul" style="background:#996633">J</span>Service begins here &mdash; Exhibition</div>
+        <div class="head"><div class="stopnum">02</div><div class="headtext">
+          <h3>They<br>Come to You</h3>
+          <div class="meta"><span class="formal">The Retrospective</span><span class="when">Circa 2050</span><span class="svc l">Local only</span></div>
+        </div></div>
+        <div class="opens"><span class="bul" style="background:#996633">J</span>Service begins here. Exhibition</div>
         <h4>What this is</h4>
         <p>A museum builds a show out of the subway work. A publisher builds a book out of the catalogue. Both call one phone number to do it, and that number is an organization.</p>
         <h4>What to look at</h4>
-        <p>The Express skips this stop, and it should &mdash; nobody schedules a museum show. It happens because the records are good enough that saying yes is easy. Curators go where the work is already documented. Every time.</p>
-        <h4>What to have ready</h4>
+        <p>The Express skips this stop, and it should. Nobody schedules a museum show. It happens because your records are good enough that saying yes is easy. Curators go where the work is already documented. Every time.</p>
+        <h4>What you need ready</h4>
         <ul>
-          <li><b>Loan-ready records.</b> A curator asks what a piece is, when it was made and who owns it. Every answer already written down.</li>
-          <li><b>High-resolution files</b> of every plate and print, one place, backed up twice.</li>
+          <li><b>Loan-ready records.</b> A curator asks what a piece is, when you made it and who owns it. Every answer already written down.</li>
+          <li><b>High-resolution files</b> of every plate and print, in one place, backed up twice.</li>
           <li><b>One contact</b> with the authority to actually grant a loan.</li>
         </ul>
-        <div class="q"><p>The photographs are why the drawings still exist.</p><div class="who">Martha Cooper &middot; on shooting the trains in the seventies</div></div>
+        <div class="q"><p>The photographs are why the drawings still exist.</p><div class="who">Martha Cooper, on shooting the trains in the seventies</div></div>
       </div>
     </div>
     <div class="row">
@@ -251,29 +270,31 @@
         <div class="ridecard">
           <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 3 to Stop 2</span>
           <h5>Answer the phone</h5>
-          <p>Once the foundation exists, people start asking. A student writing a thesis. A blog. A small gallery upstate. Say yes to the small ones and keep a file of every ask. That file is what a museum reads before it calls.</p>
+          <p>Once the foundation exists, people start asking. A student writing a thesis. A blog. A small gallery upstate. Say yes to the small ones and keep a file of every ask. That file is what a museum reads before it calls you.</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5" style="background:#00933C"></i><i class="ln b6 end" style="background:#FCCC0A"></i><div class="mk"><i class="bar b1" style="--span:6"></i><i class="dot x b1"></i><i class="dot x b2"></i><i class="dot x b3"></i><i class="dot x b4"></i><i class="dot x b5"></i><i class="dot x b6"></i></div></div>
+      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5" style="background:#00933C"></i><i class="ln b6 end" style="background:#FCCC0A"></i><div class="mk"><i class="bar" style="--span:6"></i><i class="dot x b1"></i><i class="dot x b2"></i><i class="dot x b3"></i><i class="dot x b4"></i><i class="dot x b5"></i><i class="dot x b6"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 3</span><span class="when">Circa 2032</span><span class="svc e">Express &middot; Major</span></div>
-        <h3>The Foundation</h3>
-        <div class="opens"><span class="bul dk" style="background:#FCCC0A">Q</span>Service begins here &mdash; The Mission</div>
-        <div class="now"><span class="lbl">Already on this platform</span><p>ALL CITY is the mission-shaped thing. A game about the subway, carrying PJ's name and his world, is something a foundation can hand to a room full of kids without explaining it first.</p></div>
+        <div class="head"><div class="stopnum">03</div><div class="headtext">
+          <h3>The Thing<br>That Says Yes</h3>
+          <div class="meta"><span class="formal">The Foundation</span><span class="when">Circa 2032</span><span class="svc e">Express &middot; Major</span></div>
+        </div></div>
+        <div class="opens"><span class="bul dk" style="background:#FCCC0A">Q</span>Service begins here. The Mission</div>
         <h4>What this is</h4>
-        <p>An organization that owns the work, licenses it, and spends the income on something PJ picks. Kids, materials, studio time, a cart for somebody else. Whatever the mission ends up saying.</p>
+        <p>An organization that owns your work, licenses it, and spends the income on something you pick. Kids, materials, studio time, a cart for somebody else. Whatever you decide the mission says.</p>
         <h4>What to look at</h4>
-        <p>Every artist worth copying built this while they were working, not at the end. Haring set his up in 1989 with a shop running and a full studio. Judd founded Chinati in 1986 and spent the next eight years using it. These were not exit plans. They were working artists deciding they would rather set the terms themselves than let somebody else do it later.</p>
-        <p>PJ has been on the platform since 2012. Fourteen years of work is not a warm-up for this. It is the qualification.</p>
-        <h4>What to have ready</h4>
+        <p>Every artist worth copying built this while they were still working. Haring set his up in 1989 with a shop running and a full studio. Judd founded Chinati in 1986 and spent the next eight years using it. These were not exit plans. They were working artists deciding they would rather set the terms themselves than leave it to somebody else.</p>
+        <p>You have been on the platform since 2012. Fourteen years of work is not a warm-up for this. It is the qualification.</p>
+        <h4>What you need ready</h4>
         <ul>
-          <li><b>The mission in one sentence.</b> Who it serves and what they get. If it takes a paragraph it isn't decided yet.</li>
-          <li><b>Three people</b> for a board. One who knows money, one who knows art, one who knows PJ well enough to argue with him.</li>
+          <li><b>The mission in one sentence.</b> Who it serves and what they get. If it takes a paragraph you have not decided yet.</li>
+          <li><b>Three people</b> for a board. One who knows money, one who knows art, one who knows you well enough to argue.</li>
           <li><b>A funding rule in writing.</b> What share of licensing income goes to the mission, automatically, before anybody debates it.</li>
         </ul>
-        <div class="q"><p>It takes a great deal of time and thought to install work properly.</p><div class="who">Donald Judd &middot; who bought the buildings instead of renting the walls</div></div>
+        <div class="now"><span class="lbl">Already on this platform</span><p>ALL CITY is the mission-shaped thing. A game about the subway, carrying your name and your world, is something a foundation can hand to a room full of kids without explaining it first.</p></div>
+        <div class="q"><p>It takes a great deal of time and thought to install work properly.</p><div class="who">Donald Judd, who bought the buildings instead of renting the walls</div></div>
       </div>
     </div>
     <div class="row">
@@ -282,28 +303,30 @@
         <div class="ridecard">
           <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 4 to Stop 3</span>
           <h5>Decide who it is for</h5>
-          <p>A thinking ride, not a paperwork ride. Say the mission out loud to five different people and watch which version makes them lean in. That is the sentence. Write it down the same day you hear it.</p>
+          <p>A thinking ride, not a paperwork ride. Say the mission out loud to five different people and watch which version makes them lean in. That is your sentence. Write it down the same day you hear it.</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5 end" style="background:#00933C"></i><div class="mk"><i class="bar b1" style="--span:5"></i><i class="dot o b1"></i><i class="dot o b2"></i><i class="dot o b3"></i><i class="dot o b4"></i><i class="dot o b5"></i></div></div>
+      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4" style="background:#6CBE45"></i><i class="ln b5 end" style="background:#00933C"></i><div class="mk"><i class="bar" style="--span:5"></i><i class="dot o b1"></i><i class="dot o b2"></i><i class="dot o b3"></i><i class="dot o b4"></i><i class="dot o b5"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 4</span><span class="when">Circa 2030</span><span class="svc l">Local only</span></div>
-        <h3>The Catalogue</h3>
-        <div class="opens"><span class="bul" style="background:#00933C">4</span>Service begins here &mdash; The Editions</div>
-        <div class="now"><span class="lbl">Already on this platform</span><p>Gumbit is the LeWitt case in physical form. The turnaround drawing is the instruction. The print file is the certificate. The figure is the execution, and anybody with a printer can run it. What PJ owns, and what has to be numbered, is the file.</p></div>
+        <div class="head"><div class="stopnum">04</div><div class="headtext">
+          <h3>Close<br>the Run</h3>
+          <div class="meta"><span class="formal">The Catalogue</span><span class="when">Circa 2030</span><span class="svc l">Local only</span></div>
+        </div></div>
+        <div class="opens"><span class="bul" style="background:#00933C">4</span>Service begins here. The Editions</div>
         <h4>What this is</h4>
         <p>Editions closed and stated. This design was fifty, it is gone, here is the proof. Three stores of merch becomes a counted, photographed, categorized inventory. Right now it is stock. After this stop it is a catalogue.</p>
         <h4>What to look at</h4>
-        <p>A closed edition is what makes a reissue an event instead of a restock. Same object, completely different value, and the only thing separating them is a number somebody wrote down and stuck to.</p>
-        <h4>What to have ready</h4>
+        <p>A closed edition is what makes a reissue an event instead of a restock. Same object, completely different value, and the only thing separating them is a number you wrote down and stuck to.</p>
+        <h4>What you need ready</h4>
         <ul>
-          <li><b>One row per design.</b> Name, year, plate it came from, size of run, how many left.</li>
+          <li><b>One row per design.</b> Name, year, the plate it came from, size of the run, how many are left.</li>
           <li><b>Declare each run closed</b> in writing, with a date. That declaration is what creates the edition.</li>
           <li><b>Number what can still be numbered.</b> Start with what is on the shelf today.</li>
         </ul>
-        <div class="q"><p>The idea becomes a machine that makes the art.</p><div class="who">Sol LeWitt &middot; 1967 &middot; he sold the instruction, never the wall</div></div>
+        <div class="now"><span class="lbl">Already on this platform</span><p>Gumbit is the LeWitt case in physical form. The turnaround drawing is the instruction. The print file is the certificate. The figure is the execution, and anybody with a printer can run it. What you own, and what has to be numbered, is the file.</p></div>
+        <div class="q"><p>The idea becomes a machine that makes the art.</p><div class="who">Sol LeWitt, 1967. He sold the instruction, never the wall</div></div>
       </div>
     </div>
     <div class="row">
@@ -312,26 +335,29 @@
         <div class="ridecard">
           <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 5 to Stop 4</span>
           <h5>Count while you sell</h5>
-          <p>Don't stop selling to build the catalogue. Build it out of the selling. Every time something goes out the door it gets a line: what it was, what run it came from, what is left. Ten seconds a sale, and by the time you pull into Stop 4 the work is already done.</p>
+          <p>Do not stop selling to build the catalogue. Build it out of the selling. Every time something goes out the door it gets a line: what it was, what run it came from, what is left. Ten seconds a sale, and by the time you pull into Stop 4 the work is already done.</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4 end" style="background:#6CBE45"></i><div class="mk"><i class="bar b1" style="--span:4"></i><i class="dot o b1"></i><i class="dot o b2"></i><i class="dot o b3"></i><i class="dot o b4"></i></div></div>
+      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3" style="background:#FF6319"></i><i class="ln b4 end" style="background:#6CBE45"></i><div class="mk"><i class="bar" style="--span:4"></i><i class="dot o b1"></i><i class="dot o b2"></i><i class="dot o b3"></i><i class="dot o b4"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 5</span><span class="when">Circa 2028</span><span class="svc l">Local only</span></div>
-        <h3>The Company</h3>
-        <div class="opens"><span class="bul" style="background:#6CBE45">G</span>Service begins here &mdash; The Goods</div>
+        <div class="head"><div class="stopnum">05</div><div class="headtext">
+          <h3>The Table<br>Runs Itself</h3>
+          <div class="meta"><span class="formal">The Company</span><span class="when">Circa 2028</span><span class="svc l">Local only</span></div>
+        </div></div>
+        <div class="opens"><span class="bul" style="background:#6CBE45">G</span>Service begins here. The Goods</div>
         <h4>What this is</h4>
-        <p>Platform's Edge running at scale. The cart, the cabinet, the booking calendar, ALL CITY shipped, Gumbit produced. Multiple channels, real margins, money coming in that doesn't require PJ to personally stand behind a table every single day.</p>
+        <p>Platform's Edge running at scale. The cart, the cabinet, the booking calendar, ALL CITY shipped, Gumbit produced. Multiple channels, real margins, money coming in that does not need you standing behind a table every single day.</p>
         <h4>What to look at</h4>
-        <p>This is the stop that pays for Stop 3. A foundation with nothing coming in is a piece of paper in a drawer. Haring took real heat for opening a shop and selling his own work cheap, and he was right &mdash; the shop funded everything else and put the work in more hands than any gallery ever did.</p>
-        <h4>What to have ready</h4>
+        <p>This is the stop that pays for Stop 3. A foundation with nothing coming in is a piece of paper in a drawer. Haring took real heat for opening a shop and selling his own work cheap, and he was right. The shop funded everything else and put the work in more hands than any gallery ever did.</p>
+        <h4>What you need ready</h4>
         <ul>
-          <li><b>Unit cost on every item.</b> Blank, ink, labor, shipping. The real number.</li>
-          <li><b>Margin per channel.</b> Platform, store, online, event. One of them is quietly losing money and it isn't the obvious one.</li>
+          <li><b>Unit cost on every item.</b> Blank, ink, labor, shipping. The real number, not the guess.</li>
+          <li><b>Margin per channel.</b> Platform, store, online, event. One of them is quietly losing money and it is not the obvious one.</li>
           <li><b>Ninety days logged daily.</b> One honest quarter beats three years of memory.</li>
         </ul>
+        <div class="now"><span class="lbl">Already on this platform</span><p>ALL CITY and Gumbit are the first two products that earn without you standing there. 247 Nostrand and 437 Broadway are the channels, both in play right now.</p></div>
         <div class="q"><p>Being good in business is the most fascinating kind of art.</p><div class="who">Andy Warhol</div></div>
       </div>
     </div>
@@ -346,23 +372,25 @@
       </div>
     </div>
     <div class="row">
-      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3 end" style="background:#FF6319"></i><div class="mk"><i class="bar b1" style="--span:3"></i><i class="dot x b1"></i><i class="dot x b2"></i><i class="dot x b3"></i></div></div>
+      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2" style="background:#0039A6"></i><i class="ln b3 end" style="background:#FF6319"></i><div class="mk"><i class="bar" style="--span:3"></i><i class="dot x b1"></i><i class="dot x b2"></i><i class="dot x b3"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 6</span><span class="when">Circa 2027</span><span class="svc e">Express &middot; Major</span></div>
-        <h3>The Entity</h3>
-        <div class="opens"><span class="bul" style="background:#FF6319">M</span>Service begins here &mdash; The Marks</div>
-        <div class="now"><span class="lbl">In play right now</span><p>247 Nostrand Ave and 437 Broadway are both live, and there is a landlord rep agreement on file. Every one of those is a document somebody signs. The entity wants to exist <em>before</em> the signature, not after &mdash; a lease signed personally puts the artwork in the room with the risk.<br><br>And ALL CITY is not one asset. The code, the music, the story bible and the artwork are four separate works, each one ownable, licensable and assignable on its own. They should be assigned to the holding company by name, not assumed.</p></div>
+        <div class="head"><div class="stopnum">06</div><div class="headtext">
+          <h3>Own It<br>on Paper</h3>
+          <div class="meta"><span class="formal">The Entity</span><span class="when">Circa 2027</span><span class="svc e">Express &middot; Major</span></div>
+        </div></div>
+        <div class="opens"><span class="bul" style="background:#FF6319">M</span>Service begins here. The Marks</div>
         <h4>What this is</h4>
-        <p>Two companies. One holds the artwork, the trademarks and the copyrights, and PJ owns all of it forever. The other one runs the business, takes the risk, and is the only thing an investor or a landlord ever touches.</p>
+        <p>Two companies. One holds the artwork, the trademarks and the copyrights, and you own all of it forever. The other one runs the business, takes the risk, and is the only thing an investor or a landlord ever touches.</p>
         <h4>What to look at</h4>
-        <p>If the business has a bad year, the artwork isn't in the room. If the business has a great year, the artwork licenses to it and gets paid. This is the cheapest protective move on the entire line and it is available right now.</p>
-        <h4>What to have ready</h4>
+        <p>If the business has a bad year, your artwork is not in the room. If the business has a great year, the artwork licenses to it and gets paid. This is the cheapest protective move on the whole page and it is available to you right now.</p>
+        <h4>What you need ready</h4>
         <ul>
           <li><b>Search the names first.</b> Find out what is available before the signage gets printed, not after.</li>
-          <li><b>File the holding entity</b> and formally assign the existing artwork and marks into it, in writing.</li>
+          <li><b>File the holding company</b> and formally assign the existing artwork and marks into it, in writing.</li>
           <li><b>One business bank account.</b> Nothing personal running through it, starting day one.</li>
         </ul>
-        <div class="q"><p>Own the name before somebody sells it back to you.</p><div class="who">Not a quotation &mdash; the lesson, plainly</div></div>
+        <div class="now"><span class="lbl">In play right now</span><p>247 Nostrand Ave and 437 Broadway are both live, and there is a landlord rep agreement on file. Every one of those is a document somebody signs. The company wants to exist <em>before</em> the signature, not after. A lease you sign personally puts your artwork in the room with the risk.<br><br>And ALL CITY is not one asset. The code, the music, the story bible and the artwork are four separate works, each one ownable, licensable and assignable on its own. Assign them by name. Do not assume them.</p></div>
+        <div class="q"><p>Own the name before somebody sells it back to you.</p><div class="who">Not a quotation. The lesson, plainly</div></div>
       </div>
     </div>
     <div class="row">
@@ -371,45 +399,47 @@
         <div class="ridecard">
           <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 7 to Stop 6</span>
           <h5>List what is worth keeping</h5>
-          <p>Short ride. While the archive is still fresh, write down every name, mark and design PJ would be angry to lose. That list is exactly what gets filed at Stop 6, and it is far easier to write with the plates still spread out on the table.</p>
+          <p>Short ride. While the archive is still fresh, write down every name, mark and design you would be angry to lose. That list is exactly what gets filed at Stop 6, and it is far easier to write with the plates still spread out on the table.</p>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2 end" style="background:#0039A6"></i><div class="mk"><i class="bar b1" style="--span:2"></i><i class="dot x b1"></i><i class="dot x b2"></i></div></div>
+      <div class="trk"><i class="ln b1" style="background:#A7A9AC"></i><i class="ln b2 end" style="background:#0039A6"></i><div class="mk"><i class="bar" style="--span:2"></i><i class="dot x b1"></i><i class="dot x b2"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 7</span><span class="when">2026 &middot; You are here</span><span class="svc e">Express &middot; Major</span></div>
-        <h3>The Archive</h3>
-        <div class="opens"><span class="bul" style="background:#0039A6">A</span>Service begins here &mdash; The Archive</div>
-        <div class="now"><span class="lbl">Already on this platform</span><p>ALL CITY shows what this looks like when it is done properly. Numbered builds going back to v3, a written story bible, original music, three cut videos &mdash; dated, versioned and kept, nothing saved over. That is the standard. The stencils and the plates are the part that has never had it.</p></div>
+        <div class="head"><div class="stopnum">07</div><div class="headtext">
+          <h3>The Pile<br>Becomes Proof</h3>
+          <div class="meta"><span class="formal">The Archive</span><span class="when">2026 &middot; You are here</span><span class="svc e">Express &middot; Major</span></div>
+        </div></div>
+        <div class="opens"><span class="bul" style="background:#0039A6">A</span>Service begins here. The Archive</div>
+        <div class="ann hold">Now arriving. This stop needs no money, no lawyer, no landlord and nobody's permission. You can start it this week.</div>
+        <h4>What this is</h4>
+        <p>The pile. Fourteen years of stencils, plates, prints, shirts, photos, receipts, press, and a cease and desist letter from the New York Gaming Commission that nobody has ever written about.</p>
+        <h4>What to look at</h4>
+        <p>Every stop above this one is built out of that pile. A stencil with a date is evidence. A run with a count is an edition. A story written down is history. Same objects either way. The only difference is whether somebody wrote it down.</p>
+        <p>And the hard part is finished. Fourteen years of making the work is the part almost nobody does. This is just the part where it gets a name and a number.</p>
+        <h4>Start this week</h4>
+        <ul>
+          <li><b>One folder, one naming rule.</b> Date first, then name. Boring and permanent beats clever.</li>
+          <li><b>Photograph every plate flat,</b> in daylight, with a ruler in the frame for scale. Your phone is fine. Consistency matters more than the camera.</li>
+          <li><b>Ten voice memos, ten minutes each.</b> Which plate came first, who was there, what the letter was really about. Nobody else on earth can recover this.</li>
+          <li><b>One box</b> for press, receipts, flyers, the letter.</li>
+          <li><b>Count the stock.</b> Three stores, one sheet, real numbers.</li>
+        </ul>
+        <div class="now"><span class="lbl">The standard already exists</span><p>ALL CITY shows what this looks like when it is done properly. Numbered builds going back to v3, a written story bible, original music, three cut videos, all of it dated and kept, nothing saved over. That is the standard. The stencils and the plates are the part that has never had it.</p></div>
         <div class="naming">
-          <span class="lbl">A naming convention</span>
+          <span class="lbl">The naming convention</span>
           <p style="margin-top:0">One system, five rules, and it never changes. Every file gets one name, built the same way every time:</p>
           <div class="fmt"><b>2026-09-09</b>_<b>plate</b>_train-king_<b>v01</b>.jpg</div>
           <ol>
-            <li><b>Date first, year first.</b> 2026-09-09, never 9/9/26. Written this way the files sort themselves into order forever, in any folder, on any machine.</li>
-            <li><b>Then what it is.</b> plate, print, run, press, legal, photo. One word from a short list PJ picks once and never grows.</li>
-            <li><b>Then what it's called,</b> in lowercase with hyphens. train-king, not Train King (final)(2).</li>
-            <li><b>Then the version, and never overwrite.</b> v01 stays on disk when v02 is made. This is the whole trick and it is the one rule people break. A version you kept is evidence. A version you saved over is gone.</li>
+            <li><b>Date first, year first.</b> 2026-09-09, never 9/9/26. Written this way your files sort themselves into order forever, in any folder, on any machine.</li>
+            <li><b>Then what it is.</b> plate, print, run, press, legal, photo. One word from a short list you pick once and never grow.</li>
+            <li><b>Then what it is called,</b> lowercase, hyphens. train-king, not Train King (final)(2).</li>
+            <li><b>Then the version, and never overwrite.</b> v01 stays on disk when v02 is made. This is the whole trick and it is the rule people break. A version you kept is evidence. A version you saved over is gone.</li>
             <li><b>The name carries the facts.</b> If you have to open the file to know what it is, the name failed. Rename it.</li>
           </ol>
           <p>Five rules. No software, no subscription, no app that gets discontinued. It works in a folder on a laptop and it will still work in fifty years, which is the actual requirement.</p>
         </div>
-        <div class="ann hold">Now arriving. This stop needs no money, no lawyer, no landlord and nobody's permission. It can start this week.</div>
-        <h4>What this is</h4>
-        <p>The pile. Fourteen years of stencils, plates, prints, shirts, photos, receipts, press, and a cease and desist letter from the New York Gaming Commission that nobody has ever written about.</p>
-        <h4>What to look at</h4>
-        <p>Every stop above this one is built out of this pile. A stencil with a date is evidence. A run with a count is an edition. A story written down is history. Same objects either way &mdash; the only difference is whether somebody wrote it down.</p>
-        <p>And the good news is that the hard part is finished. Fourteen years of making the work is the part most people never do. This is just the part where it gets a name and a number.</p>
-        <h4>Start this week</h4>
-        <ul>
-          <li><b>One folder, one naming rule.</b> Date first, then name. Boring and permanent beats clever.</li>
-          <li><b>Photograph every plate flat,</b> daylight, ruler in the frame for scale. A phone is fine. Consistency matters more than the camera.</li>
-          <li><b>Ten voice memos, ten minutes each.</b> Which plate came first, who was there, what the C&amp;D was really about. Nobody else on earth can recover this.</li>
-          <li><b>One box</b> for press, receipts, flyers, the letter.</li>
-          <li><b>Count the stock.</b> Three stores, one sheet, real numbers.</li>
-        </ul>
-        <div class="q"><p>Just DO!</p><div class="who">Sol LeWitt &middot; 1965 &middot; in a letter to a friend who was stuck</div></div>
+        <div class="q"><p>Just DO!</p><div class="who">Sol LeWitt, 1965, in a letter to a friend who was stuck</div></div>
       </div>
     </div>
     <div class="row">
@@ -418,20 +448,22 @@
         <div class="ridecard">
           <span class="lbl">On the train &nbsp;&middot;&nbsp; Stop 8 to Stop 7</span>
           <h5>Keep the cart running</h5>
-          <p>This is the ride PJ has already been on for fourteen years, and it isn't over. Nothing about the archive means stepping off the platform. The cart keeps going out. The difference from here on is that what goes out gets written down on the way.</p>
+          <p>This is the ride you have already been on for fourteen years, and it is not over. Nothing about the archive means stepping off the platform. The cart keeps going out. The only difference from here on is that what goes out gets written down on the way.</p>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="trk"><i class="ln b1 end" style="background:#A7A9AC"></i><div class="mk"><i class="dot x b1"></i></div></div>
       <div class="body">
-        <div class="stophead"><span class="num">STOP 8</span><span class="when">Circa 2012</span><span class="svc e">Express &middot; Origin</span></div>
-        <h3>The Platform</h3>
-        <div class="opens"><span class="bul dk" style="background:#A7A9AC">L</span>Service begins here &mdash; The Work</div>
+        <div class="head"><div class="stopnum">08</div><div class="headtext">
+          <h3>Where<br>You're Standing</h3>
+          <div class="meta"><span class="formal">The Platform</span><span class="when">Circa 2012</span><span class="svc e">Express &middot; Origin</span></div>
+        </div></div>
+        <div class="opens"><span class="bul dk" style="background:#A7A9AC">L</span>Service begins here. The Work</div>
         <h4>What this is</h4>
         <p>A homemade cart. The L train platform. Prints for sale to people waiting for a train.</p>
         <h4>What to look at</h4>
-        <p>First stop on the line and also the last one, because it is the thing every stop above it sells. The cart is not what PJ did before the real business started. The cart <em>is</em> the real business. Everything after this is the same move at a bigger size.</p>
+        <p>First stop on the line and also the last one, because it is the thing every stop above it sells. The cart is not what you did before the real business started. The cart <em>is</em> the real business. Everything after this is the same move at a bigger size.</p>
         <div class="q"><p>I don't think about art when I'm working. I try to think about life.</p><div class="who">Jean-Michel Basquiat</div></div>
       </div>
     </div>
@@ -442,13 +474,13 @@
   <section>
     <h2>Service advisories</h2>
     <p class="lede">Six things that take the line out.</p>
-    <p style="margin-bottom:26px">Every one of these has happened to somebody. Most have happened to PJ. The signs are written; the stories underneath them go in after the interview.</p>
+    <p style="margin-bottom:26px">Every one of these has happened to somebody. Most have happened to you. The signs are written. The stories underneath them go in after we talk.</p>
     <div class="adv">
       <div class="hd change">Service change</div>
       <div class="in">
         <h5>Stand clear of the closing doors</h5>
-        <p>A door that shuts on you is a deal signed without reading, a partner with a claim on the work, or a name given away. These do not reopen.</p>
-        <div class="slot">To be filled after the interview</div>
+        <p>A door that shuts on you is a deal you signed without reading, a partner with a claim on your work, or a name you gave away. These do not reopen.</p>
+        <div class="slot">Your story goes here</div>
       </div>
     </div>
     <div class="adv">
@@ -456,7 +488,7 @@
       <div class="in">
         <h5>Step aside and let them off first</h5>
         <p>Taking on the next thing before the last one has cleared. New channel, new location, new product, while the previous one is still unmeasured.</p>
-        <div class="slot">To be filled after the interview</div>
+        <div class="slot">Your story goes here</div>
       </div>
     </div>
     <div class="adv">
@@ -464,7 +496,7 @@
       <div class="in">
         <h5>Do not lean on the door</h5>
         <p>Putting weight on something you do not control. A landlord's goodwill, one buyer, one platform's algorithm, one person's handshake.</p>
-        <div class="slot">To be filled after the interview</div>
+        <div class="slot">Your story goes here</div>
       </div>
     </div>
     <div class="adv">
@@ -472,15 +504,15 @@
       <div class="in">
         <h5>The problem you spot and do not name</h5>
         <p>Numbers that do not reconcile. A partner going quiet. An agreement drifting from what was said out loud. Naming it early is the whole trick.</p>
-        <div class="slot">To be filled after the interview</div>
+        <div class="slot">Your story goes here</div>
       </div>
     </div>
     <div class="adv">
       <div class="hd exp">Running express</div>
       <div class="in">
         <h5>Trains skip stations</h5>
-        <p>The Express is a real service and sometimes it is the right one. It only hurts when you needed the thing that was sitting at the stop you passed.</p>
-        <div class="slot">To be filled after the interview</div>
+        <p>The Express is a real service and sometimes it is the right one. It only hurts when you needed the thing sitting at the stop you passed.</p>
+        <div class="slot">Your story goes here</div>
       </div>
     </div>
     <div class="adv">
@@ -488,7 +520,7 @@
       <div class="in">
         <h5>Everyone off</h5>
         <p>Something that ended. A store, a partnership, a brand name. Worth putting on the record what it was, why it ended and what it cost.</p>
-        <div class="slot">To be filled after the interview</div>
+        <div class="slot">Your story goes here</div>
       </div>
     </div>
   </section>
@@ -499,8 +531,8 @@
     <h2>Why backwards</h2>
     <p class="big">Everything old is new more than once.</p>
     <p>Haring got called a graffiti kid, then got canonized, then got written off as too commercial, and now hangs in museums that would not have let him in the door in 1982. Four turns of the same wheel around one body of work, and the work never changed once.</p>
-    <p>The market leaves and the market comes back. That is not a risk, it is a schedule. The only thing that decides whether PJ is there when it comes back around is whether he still has the work, still owns it, and can still prove it is his.</p>
-    <p style="margin-top:24px;font-weight:700">Eight services at the top of this page. One track at the bottom. All of it is the cart.</p>
+    <p>The market leaves and the market comes back. That is not a risk, it is a schedule. The only thing that decides whether you are there when it comes back around is whether you still have the work, still own it, and can still prove it is yours.</p>
+    <p style="margin-top:24px;font-weight:700">Eight services at the top of this page. One grey L at the bottom. All of it is the cart.</p>
     <div class="ann" style="margin-top:28px">This is the last stop on this train. Everybody stays on.</div>
   </section>
 
