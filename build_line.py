@@ -115,6 +115,10 @@ STOPS = [
             ("What to look at",
              "If the business has a bad year, the artwork isn't in the room. If the business has a great year, the artwork licenses to it and gets paid. This is the cheapest protective move on the entire line and it is available right now."),
         ],
+        now=("In play right now",
+             "247 Nostrand Ave and 437 Broadway are both live, and there is a landlord rep agreement on file. "
+             "Every one of those is a document somebody signs. The entity wants to exist <em>before</em> the signature, not after &mdash; "
+             "a lease signed personally puts the artwork in the room with the risk."),
         listy=("What to have ready", [
             ("Search the names first.", "Find out what is available before the signage gets printed, not after."),
             ("File the holding entity", "and formally assign the existing artwork and marks into it, in writing."),
@@ -134,6 +138,7 @@ STOPS = [
             (None,
              "And the good news is that the hard part is finished. Fourteen years of making the work is the part most people never do. This is just the part where it gets a name and a number."),
         ],
+        naming=True,
         listy=("Start this week", [
             ("One folder, one naming rule.", "Date first, then name. Boring and permanent beats clever."),
             ("Photograph every plate flat,", "daylight, ruler in the frame for scale. A phone is fine. Consistency matters more than the camera."),
@@ -192,6 +197,22 @@ ADVISORIES = [
     ("last", "Last stop", "Everyone off",
      "Something that ended. A store, a partnership, a brand name. Worth putting on the record what it was, why it ended and what it cost."),
 ]
+
+
+NAMING_BLOCK = """        <div class="naming">
+          <span class="lbl">A naming convention &mdash; borrowed, and it works</span>
+          <p style="margin-top:0">This is not PJ's system yet. It is a system that already works somewhere else, handed over. Every file gets one name, built the same way every time:</p>
+          <div class="fmt"><b>2026-09-09</b>_<b>plate</b>_train-king_<b>v01</b>.jpg</div>
+          <ol>
+            <li><b>Date first, year first.</b> 2026-09-09, never 9/9/26. Written this way the files sort themselves into order forever, in any folder, on any machine.</li>
+            <li><b>Then what it is.</b> plate, print, run, press, legal, photo. One word from a short list PJ picks once and never grows.</li>
+            <li><b>Then what it's called,</b> in lowercase with hyphens. train-king, not Train King (final)(2).</li>
+            <li><b>Then the version, and never overwrite.</b> v01 stays on disk when v02 is made. This is the whole trick and it is the one rule people break. A version you kept is evidence. A version you saved over is gone.</li>
+            <li><b>The name carries the facts.</b> If you have to open the file to know what it is, the name failed. Rename it.</li>
+          </ol>
+          <p>Five rules. No software, no subscription, no app that gets discontinued. It works in a folder on a laptop and it will still work in fifty years, which is the actual requirement.</p>
+        </div>
+"""
 
 
 def bands(count, terminating=None):
@@ -345,6 +366,20 @@ def build():
   .closer .big{font-size:40px;line-height:1;text-transform:uppercase;font-weight:700;letter-spacing:-.03em;max-width:20ch;margin:0 0 18px}
   .closer p{font-size:18px}
 
+  .now{background:var(--card);border-left:9px solid var(--ink);padding:15px 18px;margin:20px 0 0;max-width:60ch}
+  .now .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:7px}
+  .now p{margin:0 0 10px;font-size:16px;max-width:none}
+  .now p:last-child{margin:0}
+  .naming{background:var(--ink);color:var(--paper);padding:18px 20px;margin:20px 0 0;max-width:60ch}
+  .naming .lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;display:block;margin-bottom:10px;color:var(--mta-y)}
+  .naming .fmt{font-family:"SF Mono",Menlo,Consolas,monospace;font-size:15px;line-height:1.9;
+               background:rgba(255,255,255,.08);padding:12px 14px;margin:0 0 14px;overflow-x:auto;white-space:nowrap}
+  .naming .fmt b{color:var(--mta-y);font-weight:700}
+  .naming ol{margin:0;padding-left:20px;max-width:none}
+  .naming li{margin-bottom:8px;font-size:15px}
+  .naming li b{color:var(--mta-y)}
+  .naming p{max-width:none;font-size:15px}
+
   @media (max-width:700px){
     h1{font-size:40px}
     .lede{font-size:25px}
@@ -452,6 +487,13 @@ def build():
         dk = " dk" if svc.get("dark") else ""
         W('        <div class="opens"><span class="bul%s" style="background:%s">%s</span>'
           'Service begins here &mdash; %s</div>\n' % (dk, svc["color"], svc["bullet"], svc["name"]))
+
+        if stop.get("now"):
+            nh, nt = stop["now"]
+            W('        <div class="now"><span class="lbl">%s</span><p>%s</p></div>\n' % (nh, nt))
+
+        if stop.get("naming"):
+            W(NAMING_BLOCK)
 
         if stop["ann"]:
             W('        <div class="ann hold">%s</div>\n' % stop["ann"])
