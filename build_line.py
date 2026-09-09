@@ -64,6 +64,9 @@ STOPS = [
             (None,
              "PJ has been on the platform since 2012. Fourteen years of work is not a warm-up for this. It is the qualification."),
         ],
+        now=("Already on this platform",
+             "ALL CITY is the mission-shaped thing. A game about the subway, made by the man who sold on the platforms, "
+             "is something a foundation can hand to a room full of kids without explaining it first."),
         listy=("What to have ready", [
             ("The mission in one sentence.", "Who it serves and what they get. If it takes a paragraph it isn't decided yet."),
             ("Three people", "for a board. One who knows money, one who knows art, one who knows PJ well enough to argue with him."),
@@ -81,6 +84,9 @@ STOPS = [
             ("What to look at",
              "A closed edition is what makes a reissue an event instead of a restock. Same object, completely different value, and the only thing separating them is a number somebody wrote down and stuck to."),
         ],
+        now=("Already on this platform",
+             "Gumbit is the LeWitt case in physical form. The turnaround drawing is the instruction. The print file is the certificate. "
+             "The figure is the execution, and anybody with a printer can run it. What PJ owns, and what has to be numbered, is the file."),
         listy=("What to have ready", [
             ("One row per design.", "Name, year, plate it came from, size of run, how many left."),
             ("Declare each run closed", "in writing, with a date. That declaration is what creates the edition."),
@@ -118,7 +124,9 @@ STOPS = [
         now=("In play right now",
              "247 Nostrand Ave and 437 Broadway are both live, and there is a landlord rep agreement on file. "
              "Every one of those is a document somebody signs. The entity wants to exist <em>before</em> the signature, not after &mdash; "
-             "a lease signed personally puts the artwork in the room with the risk."),
+             "a lease signed personally puts the artwork in the room with the risk.<br><br>"
+             "And ALL CITY is not one asset. The code, the music, the story bible and the artwork are four separate works, "
+             "each one ownable, licensable and assignable on its own. They should be assigned to the holding company by name, not assumed."),
         listy=("What to have ready", [
             ("Search the names first.", "Find out what is available before the signage gets printed, not after."),
             ("File the holding entity", "and formally assign the existing artwork and marks into it, in writing."),
@@ -138,6 +146,10 @@ STOPS = [
             (None,
              "And the good news is that the hard part is finished. Fourteen years of making the work is the part most people never do. This is just the part where it gets a name and a number."),
         ],
+        now=("Already on this platform",
+             "ALL CITY is the proof. Twenty-odd numbered builds, a written story bible, original music, three cut videos &mdash; "
+             "all of it dated, versioned and kept. The archive habit is not something PJ has to learn at this stop. "
+             "He is already doing it. The stencils are just the part that never got the same treatment."),
         naming=True,
         listy=("Start this week", [
             ("One folder, one naming rule.", "Date first, then name. Boring and permanent beats clever."),
@@ -200,8 +212,9 @@ ADVISORIES = [
 
 
 NAMING_BLOCK = """        <div class="naming">
-          <span class="lbl">A naming convention &mdash; borrowed, and it works</span>
-          <p style="margin-top:0">This is not PJ's system yet. It is a system that already works somewhere else, handed over. Every file gets one name, built the same way every time:</p>
+          <span class="lbl">A naming convention &mdash; already running, just not here yet</span>
+          <p style="margin-top:0">PJ already does this. It is how ALL CITY is built. The game is numbered to v25 and builds going back to v3 are still sitting on disk, still playable, none of them saved over. That is the whole discipline this stop asks for, already working, on his own project.</p>
+          <p>It has simply never been pointed at the plates. Same five rules, same folder, different subject. Every file gets one name, built the same way every time:</p>
           <div class="fmt"><b>2026-09-09</b>_<b>plate</b>_train-king_<b>v01</b>.jpg</div>
           <ol>
             <li><b>Date first, year first.</b> 2026-09-09, never 9/9/26. Written this way the files sort themselves into order forever, in any folder, on any machine.</li>
@@ -210,7 +223,7 @@ NAMING_BLOCK = """        <div class="naming">
             <li><b>Then the version, and never overwrite.</b> v01 stays on disk when v02 is made. This is the whole trick and it is the one rule people break. A version you kept is evidence. A version you saved over is gone.</li>
             <li><b>The name carries the facts.</b> If you have to open the file to know what it is, the name failed. Rename it.</li>
           </ol>
-          <p>Five rules. No software, no subscription, no app that gets discontinued. It works in a folder on a laptop and it will still work in fifty years, which is the actual requirement.</p>
+          <p>Five rules. No software, no subscription, no app that gets discontinued. It works in a folder on a laptop and it will still work in fifty years, which is the actual requirement. And PJ has already proved he will keep to it, because he has been keeping to it since v3.</p>
         </div>
 """
 
